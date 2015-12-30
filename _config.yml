@@ -1,28 +1,27 @@
-baseurl: /blog
-title:            Site Title
-description:      Describe your website here.
+title:            莫光权的GitHub博客
+description:      welcome to my blog.The blog is still biulding
 disqus_shortname: hpstrtheme
 reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-url:
+url:http://moguangquan.github.io/blog/
 
 # Owner/author information
 owner:
-  name:           Your Name
+  name:           moguangquan
   avatar:         avatar.jpg
-  bio:            "Your bio goes here. It shouldn't be super long but a good two sentences or two should suffice."
-  email:          you@email.com
+  bio:            "i am a chinese software engineer man.now work on guangzhou."
+  email:          2759188793@qq.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:         
-  stackexchange:  
-  linkedin:       
-  instagram:      
-  flickr:         
-  tumblr:         
+  twitter:        无
+  facebook:       无
+  github:         https://github.com/moguangquan
+  stackexchange:  无
+  linkedin:       无
+  instagram:      无
+  flickr:         无
+  tumblr:         无
   # google plus id, include the '+', eg +mmistakes
   google_plus:    +yourid
 
@@ -36,7 +35,7 @@ google_verify:
 bing_verify:         
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Asia/Shanghai
 future:      true
 highlighter: pygments
 markdown:    kramdown
