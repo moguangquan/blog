@@ -1,11 +1,11 @@
-title:            Äª¹âÈ¨µÄGitHub²©¿Í
+title:            è«å…‰æƒçš„GitHubåšå®¢
 description:      welcome to my blog.The blog is still biulding
 disqus_shortname: hpstrtheme
 reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-url:http://moguangquan.github.io/blog/
+url:http://moguangquan.github.io/blog
 
 # Owner/author information
 owner:
@@ -14,14 +14,14 @@ owner:
   bio:            "i am a chinese software engineer man.now work on guangzhou."
   email:          2759188793@qq.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        ÎŞ
-  facebook:       ÎŞ
+  twitter:        æ— 
+  facebook:       æ— 
   github:         https://github.com/moguangquan
-  stackexchange:  ÎŞ
-  linkedin:       ÎŞ
-  instagram:      ÎŞ
-  flickr:         ÎŞ
-  tumblr:         ÎŞ
+  stackexchange:  æ— 
+  linkedin:       æ— 
+  instagram:      æ— 
+  flickr:         æ— 
+  tumblr:         æ— 
   # google plus id, include the '+', eg +mmistakes
   google_plus:    +yourid
 
