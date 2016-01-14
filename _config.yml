@@ -23,7 +23,7 @@ owner:
   flickr:         无
   tumblr:         无
   # google plus id, include the '+', eg +mmistakes
-  google_plus:    +yourid
+  google_plus:    无
 
 # Background image to be tiled on all pages
 background: 
