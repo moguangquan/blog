@@ -20,6 +20,6 @@ modified: 2016-01-14
 * 现 居地：	广东	广州
 * 家   乡：	广东	罗定  
 
-<div markdown="0"><a href="{{ site.url }}/blog/" class="btn btn-info">返回主页</a></div>
+<div markdown="0"><a href="{{ site.url }}" class="btn btn-info">返回主页</a></div>
 
 [^1]: 注: *只用于学习所用*
