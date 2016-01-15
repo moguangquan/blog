@@ -9,17 +9,17 @@ comments: false
 modified: 2016-01-14
 ---
 
-ÎÒµÄÐÂÀË²©¿ÍµØÖ· [µã»÷·ÃÎÊ](http://blog.sina.com.cn/u/2389101723), »¶Ó­·ÃÎÊ!. 
+æˆ‘çš„æ–°æµªåšå®¢åœ°å€ [ç‚¹å‡»è®¿é—®](http://blog.sina.com.cn/u/2389101723), æ¬¢è¿Žè®¿é—®!. 
 
-## ¸öÈË¼ò½é:
+## ä¸ªäººç®€ä»‹:
 
-* ÐÔ   ±ð£º	ÄÐ
-* ÐÇ   ×ù£º	ÉäÊÖ×ù
-* »é   Òö£º	µ¥Éí
-* Ö°   Òµ£º	¼ÆËã»ú
-* ÏÖ ¾ÓµØ£º	¹ã¶«	¹ãÖÝ
-* ¼Ò   Ïç£º	¹ã¶«	ÂÞ¶¨  
+* æ€§   åˆ«ï¼š	ç”·
+* æ˜Ÿ   åº§ï¼š	å°„æ‰‹åº§
+* å©š   å§»ï¼š	å•èº«
+* èŒ   ä¸šï¼š	è®¡ç®—æœº
+* çŽ° å±…åœ°ï¼š	å¹¿ä¸œ	å¹¿å·ž
+* å®¶   ä¹¡ï¼š	å¹¿ä¸œ	ç½—å®š  
 
-<div markdown="0"><a href="{{ site.url }}/blog/" class="btn btn-info">·µ»ØÖ÷Ò³</a></div>
+<div markdown="0"><a href="{{ site.url }}/blog/" class="btn btn-info">è¿”å›žä¸»é¡µ</a></div>
 
-[^1]: ×¢: *Ö»ÓÃÓÚÑ§Ï°ËùÓÃ*
+[^1]: æ³¨: *åªç”¨äºŽå­¦ä¹ æ‰€ç”¨*
