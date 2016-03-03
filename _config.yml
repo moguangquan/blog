@@ -1,6 +1,6 @@
 title:            莫光权的GitHub博客
 description:      welcome to my blog.The blog is still biulding
-disqus_shortname: blog
+disqus_shortname:      #disqus插件的简称
 reading_time:     true
 words_per_minute: 200
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
@@ -14,16 +14,16 @@ owner:
   bio:            "i am a chinese software engineer man.now work on guangzhou."
   email:          2759188793@qq.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        无
-  facebook:       无
+  twitter:        
+  facebook:       
   github:         https://github.com/moguangquan
-  stackexchange:  无
-  linkedin:       无
-  instagram:      无
-  flickr:         无
-  tumblr:         无
+  stackexchange:  
+  linkedin:       
+  instagram:      
+  flickr:         
+  tumblr:         
   # google plus id, include the '+', eg +mmistakes
-  google_plus:    无
+  google_plus:    
 
 # Background image to be tiled on all pages
 background: 
