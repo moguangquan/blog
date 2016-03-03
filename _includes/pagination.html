@@ -29,7 +29,8 @@
     {% if pages_to_end > 4 %}
       {% assign page_end = paginator.page | plus: 2 %}
     {% endif %}
-
+    page_start:{{page_start}} <br>
+page_end：{{page_end}}
     {% for index in (page_start..page_end) %}
       {% if index == paginator.page %}
         <li><strong class="current-page">{{index}}</strong></li>
