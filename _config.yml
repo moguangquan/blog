@@ -12,13 +12,13 @@ owner:
   name:           moguangquan
   avatar:         avatar.jpg
   bio:            "i am a chinese software engineer man.now work on guangzhou."
-  email:          2759188793@qq.com
+  email:          
   # Social networking links used in footer. Update and remove as you like.
   twitter:        
   facebook:       
-  github:         https://github.com/moguangquan
+  github:         moguangquan
   stackexchange:  
-  linkedin:       
+  linkedin:       profile/preview?locale=en_US&trk=prof-0-sb-preview-primary-button
   instagram:      
   flickr:         
   tumblr:         
