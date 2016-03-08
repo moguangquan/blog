@@ -494,9 +494,7 @@ header .entry-meta {
 	.col-sm-3{
 	  position: relative;
 	  min-height: 1px;
-	  padding-right: 15px;
-	  padding-left: 15px;
-	  padding-top: 45px;
+	  padding-left: 7px;
 	}
 	@media (min-width: 768px) {
 	  .col-sm-3{
@@ -505,6 +503,11 @@ header .entry-meta {
 	}
 	.col-sm-3 {
 	   width: 25%;
+	}
+	//----.main_content---
+	.main_content{
+		position: relative;
+		left: 32%;
 	}
 }
 .entry-image-index {
