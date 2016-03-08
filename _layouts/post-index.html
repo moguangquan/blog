@@ -27,6 +27,23 @@
   </div><!-- /.header-title -->
 </div><!-- /.entry-header -->
 
+<div class="col-sm-3" role="categories">
+    <div class="shadow-corner-curl hidden-xs">
+      <div class="categories-list-header">
+        Categories
+      </div><!-- /.categories-list-header -->
+      
+      <a href="javascript:;" class="categories-list-item" cate="All">
+        All<span class="my-badge"> {{site.posts | size}}</span><!-- /.my-badge -->
+      </a><!-- /.categories-list-item -->
+      {% for category in site.categories %}
+        <a href="javascript:;" class="categories-list-item" cate="{{ category | first }}">
+          {{ category | first }} <span class="my-badge">{{ category | last | size }}</span>
+        </a>
+      {% endfor %}
+    </div><!-- /.shadow-corner-curl hidden-xs-->
+</div><!-- /.col-sm-3 -->
+
 <div id="main" role="main">
   {{ content }}
 </div><!-- /#main -->
