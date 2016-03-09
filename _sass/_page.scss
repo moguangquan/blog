@@ -361,7 +361,7 @@ header .entry-meta {
 // Post Index 
 // --------------------------------------------------
 #post-index {
-	#main {
+	#class_main {
 		margin: 40px 2px 20px 2px;
 		@media #{$medium} {
 			margin-left: 20px;
@@ -372,6 +372,20 @@ header .entry-meta {
 			margin-top: 50px;
 		}
 	}
+	#post-index_main{
+		margin: 40px 2px 20px 2px;
+		@media #{$medium} {
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+		@media #{$large} {
+			max-width: 800px;
+			margin-top: 50px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+
 	article {
 		background-color: $white;
 		box-shadow: 0 0 0 0, 0 6px 12px rgba($base-color,0.1);
