@@ -21,7 +21,7 @@ comments: false
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
-<div class="col-sm-9">
+  <div class="col-sm-9">
     <div class="post-area ">
     <div class="post-list-header">
     Posts
@@ -29,11 +29,11 @@ comments: false
       <div class="post-list-body">
         <div class="all-posts" post-cate="All">
           {% for post in site.posts %}
-            <a class="post-list-item" href="{{ post.url | prepend: site.baseurl }}">
+            <a class="post-list-item" href="{{ post.url | prepend: site.url }}">
               <h2>
               {{ post.title }}
               </h2>
-              <span class="">{{ post.date | date: "%b %-d, %Y" }}</span>
+              <span class="">{{ post.description}}</span>
             </a>
           {% endfor %}
         </div>
