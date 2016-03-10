@@ -521,6 +521,50 @@ header .entry-meta {
 		position: relative;
 		left: 32%;
 	}
+	//--------------
+	//-------.col-sm-9--------
+	.col-sm-9{
+		padding-left: 15px;
+		width: 75%;
+	}
+	//-------.post-area--------
+	.post-area{
+		background-color:#f8f8fd;
+		-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
+		-moz-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
+		-o-box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.4),0 0 30px rgba(10,10,0,0.1) inset;
+	}
+	//-------.post-list-header--------
+	.post-list-header{
+		padding: 15px 30px;
+		border-bottom: 1px solid #c0c0c0;
+		font-size: 30px;
+		font-weight: bold;
+	}
+	//-------.post-list-item--------
+	.post-list-item{
+		display: block;
+		padding:8px 30px 10px 30px; 
+		border-bottom:1px solid #ddd;
+
+		transition:0.4s ease; 
+		-webkit-transition:0.4s ease;
+		-moz-transition:0.4s ease;
+		-o-transition:0.4s ease;
+	}
+	.post-list-item:last-of-type{
+		border-bottom: none;
+	}
+	.post-list-item h2{
+		font-size: 20px;
+		margin: 8px 0 8px 0;
+		padding: 0;
+	}
+	.post-list-item:hover{
+		background-color: rgba(0,0,6,0.05);
+		
+	}
 }
 .entry-image-index {
 	margin-top: -25px;
