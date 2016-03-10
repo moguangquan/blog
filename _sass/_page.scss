@@ -504,28 +504,22 @@ header .entry-meta {
 	}
 	//---.col-sm-3----
 	.col-sm-3{
-	  position: relative;
+	  position: absolute;
 	  min-height: 1px;
 	  padding-left: 7px;
 	}
-	@media (min-width: 768px) {
-	  .col-sm-3{
-	    float: left;
-	  }
-	}
 	.col-sm-3 {
-	   width: 25%;
+	   width: 20%;
 	}
 	//----.main_content---
 	.main_content{
 		position: relative;
-		left: 32%;
+		left: 37%;
 	}
 	//--------------
 	//-------.col-sm-9--------
 	.col-sm-9{
 		padding-left: 15px;
-		width: 75%;
 	}
 	//-------.post-area--------
 	.post-area{
