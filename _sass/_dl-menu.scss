@@ -13,8 +13,9 @@
 	@media #{$medium} {
 		position: fixed;
 		max-width: 175px;
-		top: 25px;
+		top: 3px;
 		left: 25px;
+		z-index: 3000;
 	}
 	button {
 		top: 0;
