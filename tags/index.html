@@ -24,18 +24,6 @@ comments: false
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 
-{% for item in (0..site.tags.size) %}{% unless forloop.last %}
-  {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
-	<article>
-	<h2 id="{{ this_word }}" class="tag-heading">{{ this_word }}</h2>
-		<ul>
-    {% for post in site.tags[this_word] %}{% if post.title != null %}
-      <li class="entry-title"><a href="{{ site.url }}{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
-    {% endif %}{% endfor %}
-		</ul>
-	</article><!-- /.hentry -->
-{% endunless %}{% endfor %}
-
 <div class="main_content">
   <div class="col-sm-9">
     <div class="post-area ">
@@ -46,7 +34,7 @@ comments: false
         <div class="all-posts" post-cate="first-tag">
           {% capture this_word %}{{ tags_list[0] | strip_newlines }}{% endcapture %}
           {% for post in site.tags[this_word] %}{% if post.title != null %}
-            <a class="post-list-item" href="{{post.url | prepend: site.url }" title="{{ post.title }}">
+            <a class="post-list-item" href="{{post.url | prepend: site.url }}" title="{{ post.title }}">
               <h2>{{ post.title }}</h2>
               <span class="">{{ post.description}}</span>
             </a>
