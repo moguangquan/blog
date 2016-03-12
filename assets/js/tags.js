@@ -11,6 +11,7 @@ function tagDisplay() {
     /*show tag when click tag list*/
     $('.categories-list-item').click(function() {
         var cate = $(this).attr('cate'); //get tag's name
+        alert(cate);
         $('.post-list-body>div[post-cate!=' + cate + ']').hide(250);
         $('.post-list-body>div[post-cate=' + cate + ']').show(400);
     });
