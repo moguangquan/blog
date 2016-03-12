@@ -11,8 +11,8 @@ function tagDisplay() {
     /*show tag when click tag list*/
     $('.tag').click(function() {
         var cate = $(this).attr('cate'); //get tag's name
-        $(document.getElementsByName(cate)[0]).hide(250);
-        $('.post-list-body>div[post-cate=' + cate + ']').show(400);
+        $('.post-list-body>div').hide(250);
+        $(document.getElementsByName(cate)[0]).show(400);
     });
 }
 // FitVids options
