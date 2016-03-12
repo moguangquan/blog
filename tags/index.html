@@ -31,7 +31,7 @@ comments: false
     Posts
     </div>
       <div class="post-list-body">
-        <div class="all-posts" post-cate="first-tag">
+        <div class="all-posts" post-cate="first-tag" name="first-tag">
           {% capture this_word %}{{ tags_list[0] | strip_newlines }}{% endcapture %}
           {% for post in site.tags[this_word] %}{% if post.title != null %}
             <a class="post-list-item" href="{{post.url | prepend: site.url }}" title="{{ post.title }}">
@@ -43,7 +43,7 @@ comments: false
 
         <!-- <div class="posts-in-tags"> -->
         {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-          <div post-cate="{{tags_list[item]}}">
+          <div post-cate="{{tags_list[item]}}" name="{{tags_list[item]}}">
             {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
             {% for post in site.tags[this_word] %}
               {% if post.url %}
