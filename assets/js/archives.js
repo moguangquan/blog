@@ -1,4 +1,4 @@
-/*分类的js */
+/*归档分类的js */
 /**
  * 分类展示
  * 点击左侧的分类展示时
@@ -6,8 +6,7 @@
  * @return {[type]} [description]
  */
 function archiveDisplay() {
-    /*show category when click archives list*/
-    $('.archives-list-item').click(function() {
+    $('.categories-list-item').click(function() {
         var cate = $(this).attr('cate'); //get archive name
         $('.post-list-body>a[post-cate!=' + cate + ']').hide(250);
         $('.post-list-body>a[post-cate=' + cate + ']').show(400);
