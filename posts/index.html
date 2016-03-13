@@ -34,7 +34,7 @@ comments: false
               {{ post.title }}
               </h2>
               <span class="">{{ post.description}}</span>
-              <br><span class="post-list-item-date">{{ post.date|date:date: "%Y 年 %m 月 %d日" }}</span>
+              <br><span class="post-list-item-date">{{ post.date|date: "%Y 年 %m 月 %d日" }}</span>
             </a>
           {% endfor %}
         </div>
@@ -49,7 +49,7 @@ comments: false
                     {{ post.title }}
                     </h2>
                     <span class="">{{ post.description }}</span>
-                    <br><span class="post-list-item-date">{{ post.date|date:date: "%Y 年 %m 月 %d日" }}</span>
+                    <br><span class="post-list-item-date">{{ post.date|date: "%Y 年 %m 月 %d日" }}</span>
                   </a>
                 {% endif %}
               {% endfor %}

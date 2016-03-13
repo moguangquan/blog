@@ -38,7 +38,7 @@ tags: [java]
             <a class="post-list-item" href="{{post.url | prepend: site.url }}" title="{{ post.title }}">
               <h2>{{ post.title }}</h2>
               <span class="">{{ post.description}}</span>
-              <br><span class="post-list-item-date">{{ post.date|date:date: "%Y 年 %m 月 %d日" }}</span>
+              <br><span class="post-list-item-date">{{ post.date|date:"%Y 年 %m 月 %d日" }}</span>
             </a>
           {% endif %}{% endfor %}
         </div>
@@ -52,7 +52,7 @@ tags: [java]
                 <a href="{{ post.url }}" class="post-list-item">
                   <h2>{{ post.title }}</h2>
                   <span class="">{{ post.description }}</span>
-                  <br><span class="post-list-item-date">{{ post.date|date:date: "%Y 年 %m 月 %d日" }}</span>
+                  <br><span class="post-list-item-date">{{ post.date|date:"%Y 年 %m 月 %d日" }}</span>
                 </a>
               {% endif %}
             {% endfor %}
