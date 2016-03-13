@@ -6,7 +6,7 @@ comments: false
 ---
 <div class="col-sm-3" role="categories">
     <div class="shadow-corner-curl hidden-xs">
-      <div class="categories-list-header">
+      <div class="categories-list-header iconfont category-icon">
         Categories
       </div><!-- /.categories-list-header -->
       
@@ -34,6 +34,7 @@ comments: false
               {{ post.title }}
               </h2>
               <span class="">{{ post.description}}</span>
+              <br><span class="post-list-item-date">{{ post.date|date:date: "%Y 年 %m 月 %d日" }}</span>
             </a>
           {% endfor %}
         </div>
@@ -48,6 +49,7 @@ comments: false
                     {{ post.title }}
                     </h2>
                     <span class="">{{ post.description }}</span>
+                    <br><span class="post-list-item-date">{{ post.date|date:date: "%Y 年 %m 月 %d日" }}</span>
                   </a>
                 {% endif %}
               {% endfor %}

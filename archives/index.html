@@ -6,8 +6,14 @@ comments: false
 ---
 <div class="col-sm-3" role="categories">
     <div class="shadow-corner-curl hidden-xs">
-      <div class="categories-list-header">
+      <div class="categories-list-header iconfont archive-icon">
         Archives
+        <sapn style="float: right;">
+          <a href="javascript:;" title="prev year" style="color:#337ab7;">
+          &lt;&lt;</a>
+          &nbsp;<b class="year-archive" onclick="javascript:;" title="待实现">2016年</b>&nbsp; 
+          <a href="javascript:;" title="next year" style="color: #337ab7;">&gt;&gt;</a>
+        </sapn>
       </div><!-- /.categories-list-header -->
       
     {% assign count = 1 %}
@@ -42,6 +48,7 @@ comments: false
             <!-- <time datetime="{{ item.date }}">{{ item.date | date: "%Y 年 %m 月" }}</time> -->
               <h2>{{ post.title }}</h2>
               <span class="">{{ post.description }}</span>
+              <br><span class="post-list-item-date">{{ post.date|date:date: "%Y 年 %m 月 %d日" }}</span>
             </a>
          {% endfor %}
       </div>
