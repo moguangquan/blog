@@ -695,3 +695,7 @@ header .entry-meta {
 	border-bottom: 13px solid #bbb;
 	background-color: #7f7f7f;
 }
+/**分类的icon**/
+.category-icon:before{content:"\f07b"}
+.tag-icon:before{content:"\f02c"}
+.archive-icon:before{content:"\f187"}

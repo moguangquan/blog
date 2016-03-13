@@ -8,7 +8,7 @@
 function archiveDisplay() {
     $('.categories-list-item').click(function() {
         var cate = $(this).attr('cate'); //get archive name
-        $('.post-list-body>a[post-cate!=' + cate + ']').hide(250);
+        $('.post-list-body>a[post-cate!=' + cate + ']').hide();
         $('.post-list-body>a[post-cate=' + cate + ']').show(400);
     });
 }
