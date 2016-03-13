@@ -17,7 +17,7 @@ comments: false
       {% capture this_date_str %}{{ this_date | date: "%Y-%m" }}{% endcapture %}
       {% capture next_date_str %}{{ next_date | date: "%Y-%m" }}{% endcapture %}
       {% if this_date_str != next_date_str %}
-          <a href="javascript:;" class="categories-list-item" cate="post-{{ item.date | date: "%Y-%m" }}">
+          <a href="javascript:;" class="categories-list-item" cate="post-{{ this_date| date: "%Y-%m" }}">
           {{ this_date | date: "%Y 年 %m 月" }} <span class="my-badge">{{ count }}</span>
           </a>
       {% assign count = 1 %}
