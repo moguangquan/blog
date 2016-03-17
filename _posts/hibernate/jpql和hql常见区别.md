@@ -5,6 +5,7 @@ description: "jpql和hql在使用上的常见区别（不全）"
 tags: [jpql,hql]
 categories:hibernate
 ---
+
 常见区别一：
 hql对sql中的Positional parameters和Named parameters的使用方式是相同的，而jpql对Positional parameters有些不同
 
