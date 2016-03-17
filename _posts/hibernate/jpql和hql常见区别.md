@@ -3,7 +3,7 @@ layout: post
 title: "jpql和hql常见区别"
 description: "jpql和hql在使用上的常见区别（不全）"
 tags: [jpql,hql]
-categories:hibernate
+categories: hibernate
 ---
 
 常见区别一：
