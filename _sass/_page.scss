@@ -4,6 +4,35 @@ body {
 	width: 100%;
 	background-image:url("/blog/images/bg-canvas_bg.jpg");
 }
+/**table start**/
+table{
+  border-collapse: collapse;
+  border-spacing: 0;  
+  display: table;
+  border-color: gray;
+  line-height: 1.6;
+}
+tbody {
+display: table-row-group;
+vertical-align: middle;
+border-color: inherit;
+}
+thead {
+display: table-header-group;
+vertical-align: middle;
+border-color: inherit;
+}
+thead th{
+   border: 1px solid #ddd;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+/**table end**/
 
 // Main
 // --------------------------------------------------
