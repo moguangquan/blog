@@ -25,7 +25,7 @@ function generatePagi() {
             return false;
         }
 
-        $('.showcase.current #paginator').pagination({
+        $('.post-list-body #paginator').pagination({
             dataSource: dataSource,
             pageSize: 2,
             callback: function(data, pagination) {
