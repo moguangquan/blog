@@ -4,20 +4,22 @@ layout: classification
 description: "An archive of posts."
 comments: false
 ---
+
+<!--排序，字母在前-->
+{% assign cates_list = site.categories | split:',' | sort %}
+{% assign cates_length = site.categories.size %}
+
 <div class="col-sm-3" role="categories">
     <div class="shadow-corner-curl hidden-xs">
       <div class="categories-list-header iconfont category-icon">
         Categories
       </div><!-- /.categories-list-header -->
-      
-      <a href="javascript:;" class="categories-list-item" cate="All">
-        All<span class="my-badge"> {{site.posts | size}}</span><!-- /.my-badge -->
-      </a><!-- /.categories-list-item -->
-      {% for category in site.categories %}
-        <a href="javascript:;" class="categories-list-item" cate="{{ category | first }}">
-          {{ category | first }} <span class="my-badge">{{ category | last | size }}</span>
+      {% for item in (0..cates_length) %}{% unless forloop.last %}
+      {% capture this_word %}{{ cates_list[item] | strip_newlines }}{% endcapture %}
+        <a href="javascript:;" class="categories-list-item" cate="{{this_word }}">
+          {{this_word}} <span class="my-badge">{{ cates_list[item] | last | size }}</span>
         </a>
-      {% endfor %}
+      {% endunless %}{% endfor %}
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
@@ -27,17 +29,25 @@ comments: false
     Posts
     </div>
       <div class="post-list-body">
-        <div class="all-posts" post-cate="All">
-          {% for post in site.posts %}
-            <a class="post-list-item" href="{{ post.url | prepend: site.url }}">
-              <h2>
-              {{ post.title }}
-              </h2>
-              <span class="">{{ post.description}}</span>
-              <br><span class="post-list-item-date">{{ post.date|date: "%Y 年 %m 月 %d日" }}</span>
-            </a>
-          {% endfor %}
-        </div>
+
+<!--第一个目录 start-->
+{% capture this_word %}{{ cates_list[0] | strip_newlines }}{% endcapture %}
+          <div post-cate="first-cate">
+            {% for posts in cates_list[0]  %}
+              {% for post in posts %}
+                {% if post.url %}
+                  <a href="{{ post.url | prepend: site.url }}" class="post-list-item">
+                    <h2>
+                    {{ post.title }}
+                    </h2>
+                    <span class="">{{ post.description }}</span>
+                    <br><span class="post-list-item-date">{{ post.date|date: "%Y 年 %m 月 %d日" }}</span>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          </div>
+<!--第一个目录 end-->
         <!-- <div class="posts-in-categories"> -->
         {% for category in site.categories %}
           <div post-cate="{{category | first}}">
