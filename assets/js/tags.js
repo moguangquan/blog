@@ -13,7 +13,28 @@ function tagDisplay() {
         var cate = $(this).attr('cate'); //get tag's name
         $('.post-list-body>div').hide(250);
         $(document.getElementsByName(cate)[0]).show(400);
+        generatePagi();
     });
+    generatePagi();
+}
+/**
+*生成分页
+*/
+function generatePagi() {
+        var dataSource = $.makeArray($('.post-list-body').children(":visible"));
+        if(!dataSource.length) {
+            return false;
+        }
+
+        $('.post-list-body #paginator').pagination({
+            dataSource: dataSource,
+            pageSize: 2,
+            callback: function(data, pagination) {
+                $(dataSource).hide();
+                $(data).show();
+            }
+        });
+
 }
 // FitVids options
 $(function() {
