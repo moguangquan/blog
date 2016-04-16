@@ -15,6 +15,7 @@ function categoryDisplay() {
         $('.post-list-body>div[post-cate=' + cate + ']').show(400);
         generatePagi();
     });
+    generatePagi();
 }
 /**
 *生成分页
@@ -37,6 +38,5 @@ function generatePagi() {
 }
 // FitVids options
 $(function() {
-  generatePagi();
   categoryDisplay();
 });
