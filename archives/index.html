@@ -1,6 +1,6 @@
 ---
 layout: archive
-#title: All Posts
+title: All Posts
 description: "An archive of posts."
 comments: false
 ---
@@ -11,11 +11,11 @@ comments: false
         <sapn style="float: right;">
           <a href="javascript:;" title="prev year" style="color:#337ab7;">
           &lt;&lt;</a>
-          <b class="year-archive" onclick="javascript:;" title="待实现">2016年</b> 
+          <b class="year-archive" onclick="javascript:;" title="待实现">2016年</b>
           <a href="javascript:;" title="next year" style="color: #337ab7;">&gt;&gt;</a>
         </sapn>
       </div><!-- /.categories-list-header -->
-      
+
     {% assign count = 1 %}
     {% for post in site.posts  %}
       {% capture this_date %}{{ post.date }}{% endcapture %}
