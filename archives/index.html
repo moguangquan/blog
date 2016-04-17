@@ -36,7 +36,7 @@ comments: false
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
-<div class="col-sm-9">
+  <div class="col-sm-9">
     <div class="post-area ">
     <div class="post-list-header">
     Posts
@@ -54,24 +54,24 @@ comments: false
                 {% assign names_archives =names_archives | append: "," | append: this_date_str %}
           {% endif %}
       {% endfor %}
- -------------------names_archives:{{names_archives}}
       {% assign names_archives =names_archives | slice: 1,names_archives.size %} <!-- 去掉第一个字符 -->
       {% assign array_archi = names_archives | split: ',' %}<!-- 转为数组 -->
           {% for arc_item in (0..count_archives) %}{% unless forloop.last %}
-                 <div post-cate="{{array_archi[arc_item]}}">
-
-                 </div>
+              <div post-cate="post-{{array_archi[arc_item]}}">
+              {% for post in site.posts %}
+                {% capture cur_post_date %}{{ post.date | date: "%Y-%m" }}{% endcapture %}
+                {% if array_archi[arc_item] == cur_post_date %}
+                {% assign item = post %}
+                  <a href="{{ site.url }}{{ item.url }}" title="{{ item.title }}" class="post-list-item">
+                    <h2>{{ post.title }}</h2>
+                    <span class="">{{ post.description }}</span>
+                    <br><span class="post-list-item-date">{{ post.date|date: "%Y 年 %m 月 %d日" }}</span>
+                  </a>
+                {% endif %}
+              {% endfor %}
+              </div>
           {% endunless %}{% endfor %}
 
-        {% for post in site.posts %}
-          {% assign item = post %}
-            <a href="{{ site.url }}{{ item.url }}" title="{{ item.title }}" class="post-list-item" post-cate="post-{{ item.date | date: "%Y-%m" }}">
-            <!-- <time datetime="{{ item.date }}">{{ item.date | date: "%Y 年 %m 月" }}</time> -->
-              <h2>{{ post.title }}</h2>
-              <span class="">{{ post.description }}</span>
-              <br><span class="post-list-item-date">{{ post.date|date: "%Y 年 %m 月 %d日" }}</span>
-            </a>
-         {% endfor %}
       </div>
     </div>
   </div>

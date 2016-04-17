@@ -6,11 +6,14 @@
  * @return {[type]} [description]
  */
 function archiveDisplay() {
-	//$('.post-list-body').find('div:first').nextAll().hide();
+	$('.post-list-body').find('div:first').nextAll().hide();
     $('.categories-list-item').click(function() {
-        var cate = $(this).attr('cate'); //get archive name
+      /*  var cate = $(this).attr('cate'); //get archive name
         $('.post-list-body>a[post-cate!=' + cate + ']').hide();
-        $('.post-list-body>a[post-cate=' + cate + ']').show(400);
+        $('.post-list-body>a[post-cate=' + cate + ']').show(400);*/
+         var cate = $(this).attr('cate'); //get archive name
+        $('.post-list-body>div[post-cate!=' + cate + ']').hide(250);
+        $('.post-list-body>div[post-cate=' + cate + ']').show(400);
     });
 }
 // FitVids options
