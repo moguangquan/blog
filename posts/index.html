@@ -33,7 +33,8 @@ comments: false
 
         <!-- <div class="posts-in-categories"> -->
         {% for category in site.categories %}
-          <div post-cate="{{category | first}}">
+        {% assign cate_name=category | first %}
+          <div post-cate="{{cate_name}}">
             {% for posts in category %}
               {% for post in posts %}
                 {% if post.url %}
@@ -47,15 +48,16 @@ comments: false
                 {% endif %}
               {% endfor %}
             {% endfor %}
+        }
 <!--页码 start-->
           {% assign cate_pageNum=2 %}
-          {% if site.categories[category | first].size | modulo:cate_pageNum ==0 %}
-            {% assign cur_cate_totalpageNums=site.categories[category | first].size | divided_by:cate_pageNum %}
+          {% if site.categories[cate_name].size | modulo:cate_pageNum ==0 %}
+            {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum %}
           {% else %}
-            {% assign cur_cate_totalpageNums=site.categories[category | first].size | divided_by:cate_pageNum | plus:1 %}
+            {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum | plus:1 %}
           {% endif %}
-          ----------category-first:{{category | first}}
-          +++++++++category.size:{{site.categories[category | first].size}}
+          ----------cate_name:{{cate_name}}
+          +++++++++category.size:{{site.categories[cate_name].size}}
           --------cur_cate_totalpageNums:{{cur_cate_totalpageNums}}
           {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
           <div class="pagination">
