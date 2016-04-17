@@ -49,7 +49,7 @@ comments: false
             {% endfor %}
           </div>
 <!--页码 start-->
-          {% assgin cate_pageNum=2 %}
+          {% assign cate_pageNum=2 %}
           {% if category.size | modulo:cate_pageNum ==0 %}
             {% assign cur_cate_totalpageNums=category.size | divided_by:cate_pageNum %}
           {% else %}
