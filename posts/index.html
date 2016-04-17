@@ -49,12 +49,12 @@ comments: false
             {% endfor %}
 <!--页码 start-->
           {% assign cate_pageNum=2 %}
-          {% if category.size | modulo:cate_pageNum ==0 %}
-            {% assign cur_cate_totalpageNums=category.size | divided_by:cate_pageNum %}
+          {% if site.categories[category | first].size | modulo:cate_pageNum ==0 %}
+            {% assign cur_cate_totalpageNums=site.categories[category | first].size | divided_by:cate_pageNum %}
           {% else %}
-            {% assign cur_cate_totalpageNums=category.size | divided_by:cate_pageNum | plus:1 %}
+            {% assign cur_cate_totalpageNums=site.categories[category | first].size | divided_by:cate_pageNum | plus:1 %}
           {% endif %}
-          +++++++++category.size:{{category.size}}
+          +++++++++category.size:{{site.categories[category | first].size}}
           --------cur_cate_totalpageNums:{{cur_cate_totalpageNums}}
           {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
           <div class="pagination">
