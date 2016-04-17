@@ -53,7 +53,6 @@ comments: false
                 {% assign names_archives | append: "," | append: this_date_str %}<!-- 拼接字符串 -->
           {% endif %}
       {% endfor %}
-      -------------------names_archives:{{names_archives}}
 
 
         {% for post in site.posts %}
