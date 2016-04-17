@@ -54,7 +54,14 @@ comments: false
                 {% assign names_archives =names_archives | append: "," | append: this_date_str %}
           {% endif %}
       {% endfor %}
+ -------------------names_archives:{{names_archives}}
+      {% assign names_archives =names_archives | slice: 1,names_archives.size %} <!-- 去掉第一个字符 -->
+      {% assign array_archi = names_archives | split: ',' %}<!-- 转为数组 -->
+          {% for arc_item in (0..count_archives) %}{% unless forloop.last %}
+                 <div post-cate="{{array_archi[arc_item]}}">
 
+                 </div>
+          {% endunless %}{% endfor %}
 
         {% for post in site.posts %}
           {% assign item = post %}
