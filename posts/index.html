@@ -34,7 +34,7 @@ comments: false
         <!-- <div class="posts-in-categories"> -->
         {% for category in site.categories %}
           <div post-cate="{{category | first}}">
-            {% for posts in category  %}
+            {% for posts in category %}
               {% for post in posts %}
                 {% if post.url %}
                   <a href="{{ post.url | prepend: site.url }}" class="post-list-item">
@@ -54,6 +54,7 @@ comments: false
           {% else %}
             {% assign cur_cate_totalpageNums=site.categories[category | first].size | divided_by:cate_pageNum | plus:1 %}
           {% endif %}
+          ----------category-first:{{category | first}}
           +++++++++category.size:{{site.categories[category | first].size}}
           --------cur_cate_totalpageNums:{{cur_cate_totalpageNums}}
           {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
