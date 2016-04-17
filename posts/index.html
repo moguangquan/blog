@@ -47,7 +47,6 @@ comments: false
                 {% endif %}
               {% endfor %}
             {% endfor %}
-          </div>
 <!--页码 start-->
           {% assign cate_pageNum=2 %}
           {% if category.size | modulo:cate_pageNum ==0 %}
@@ -55,6 +54,7 @@ comments: false
           {% else %}
             {% assign cur_cate_totalpageNums=category.size | divided_by:cate_pageNum | plus:1 %}
           {% endif %}
+          --------cur_cate_totalpageNums:{{cur_cate_totalpageNums}}
           {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
           <div class="pagination">
            <ul class="inline-list">
@@ -76,6 +76,7 @@ comments: false
            </ul>
           </div>
 <!--页码 end-->
+          </div>
         {% endfor %}
         <!-- </div> -->
       </div>
