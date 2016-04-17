@@ -52,27 +52,27 @@ comments: false
       </div>
     </div>
   </div>
-  <!--目录分页-->
-  <div class="row" id="paginator">
-      {% if paginator.total_pages > 1 %}
-          {% if paginator.previous_page %}
-              <a href="{{ paginator.previous_page_path | prepend: site.url }}">«</a>
-          {% endif %}
+ <!--  目录分页
+ <div class="row" id="paginator">
+     {% if paginator.total_pages > 1 %}
+         {% if paginator.previous_page %}
+             <a href="{{ paginator.previous_page_path | prepend: site.url }}">«</a>
+         {% endif %}
 
-          {% for page in (1..paginator.total_pages) %}
-              {% if page == paginator.page %}
-                  <span class="active">{{ page }}</span>
-              {% elsif page == 1 %}
-                  <a href="{{ site.url }}">{{ page }}</a>
-              {% else %}
-                  <a href="{{ site.paginate_path | prepend: site.url | replace: ':num', page }}">{{ page }}</a>
-              {% endif %}
-          {% endfor %}
+         {% for page in (1..paginator.total_pages) %}
+             {% if page == paginator.page %}
+                 <span class="active">{{ page }}</span>
+             {% elsif page == 1 %}
+                 <a href="{{ site.url }}">{{ page }}</a>
+             {% else %}
+                 <a href="{{ site.paginate_path | prepend: site.url | replace: ':num', page }}">{{ page }}</a>
+             {% endif %}
+         {% endfor %}
 
-          {% if paginator.next_page %}
-              <a href="{{ paginator.next_page_path | prepend: site.url }}">»</a>
-          {% endif %}
-      {% endif %}
-  </div>
-  <!--目录分页 end-->
+         {% if paginator.next_page %}
+             <a href="{{ paginator.next_page_path | prepend: site.url }}">»</a>
+         {% endif %}
+     {% endif %}
+ </div>
+ 目录分页 end -->
 </div>
