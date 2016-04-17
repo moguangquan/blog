@@ -6,7 +6,7 @@
  * @return {[type]} [description]
  */
 function archiveDisplay() {
-	$('.post-list-body').find('div:first').nextAll().hide();
+	//$('.post-list-body').find('div:first').nextAll().hide();
     $('.categories-list-item').click(function() {
         var cate = $(this).attr('cate'); //get archive name
         $('.post-list-body>a[post-cate!=' + cate + ']').hide();

@@ -27,7 +27,7 @@ function generatePagi() {
             return false;
         }
 
-        $('.post-list-body #paginator').pagination({
+        $('.main_content #paginator').pagination({
             dataSource: dataSource,
             pageSize: 2,
             callback: function(data, pagination) {

@@ -42,9 +42,28 @@ paginate_path: "archives/page:num"
     Posts
     </div>
       <div class="post-list-body">
-          {% for post in site.posts %}
+
+      {% assign names_archives ="" %}
+      {% assign count_archives = 0 %}
+      {% for post in site.posts %}
+          {% capture this_date_str %}{{ post.date | date: "%Y-%m" }}{% endcapture %}
+          {% capture next_date_str %}{{ post.previous.date | date: "%Y-%m" }}{% endcapture %}
+          {% if this_date_str != next_date_str %}
+                {% assign count_archives =count_archives | plus:1 %}
+                {% assign names_archives | append: "," | append: this_date_str %}<!--拼接字符串-->
+          {% endif %}
+      {% endfor %}
+      names_archives:{{names_archives}}
+      {% assign names_archives =names_archives | slice: 1,names_archives.size %} <!--去掉第一个字符-->
+      {% assign array_archi = names_archives | split: ',' %}<!--转为数组-->
+          {% for arc_item in (0..count_archives) %}{% unless forloop.last %}
+                 <div post-cate="{{array_archi[item]}}">
+
+                 </div>
+          {% endunless %}{% endfor %}
+
+        {% for post in site.posts %}
           {% assign item = post %}
-          {% assign index = true %}
             <a href="{{ site.url }}{{ item.url }}" title="{{ item.title }}" class="post-list-item" post-cate="post-{{ item.date | date: "%Y-%m" }}">
             <!-- <time datetime="{{ item.date }}">{{ item.date | date: "%Y 年 %m 月" }}</time> -->
               <h2>{{ post.title }}</h2>
