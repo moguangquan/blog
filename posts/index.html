@@ -54,14 +54,12 @@ comments: false
           {% if site.categories[cate_name].size > cate_pageNum %}
           <div class="pagination">
             <ul class="inline-list">
-              {% if site.categories[cate_name].size | modulo:cate_pageNum ==1 %}
-        { % assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum | plus:1 %}
-              {% else %}
-              {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum %}
-              {% endif %}
-          ----------cate_name:{{cate_name}}
-          +++++++++category.size:{{site.categories[cate_name].size}}
-          --------cur_cate_totalpageNums:{{cur_cate_totalpageNums}}
+                  {% if site.categories[cate_name].size | modulo:cate_pageNum ==1 %}
+            { % assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum | plus:1 %}
+                  {% else %}
+                  {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum %}
+                  {% endif %}
+
                   {% if cur_cate_totalpageNums-1 > show_Page %}
                    <li><strong class="prev">«</strong></li>
                    {% endif %}
