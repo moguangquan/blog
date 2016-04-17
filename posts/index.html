@@ -48,6 +48,34 @@ comments: false
               {% endfor %}
             {% endfor %}
           </div>
+<!--页码 start-->
+          {% assgin cate_pageNum=2 %}
+          {% if category.size | modulo:cate_pageNum ==0 %}
+            {% assign cur_cate_totalpageNums=category.size | divided_by:cate_pageNum %}
+          {% else %}
+            {% assign cur_cate_totalpageNums=category.size | divided_by:cate_pageNum | plus:1 %}
+          {% endif %}
+          {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
+          <div class="pagination">
+           <ul class="inline-list">
+              {% if cur_cate_totalpageNums > 1 %}
+                  {% if cur_cate_totalpageNums-1 > show_Page %}
+                   <li><strong class="prev">«</strong></li>
+                   {% endif %}
+                  {% for page in (1..cur_cate_totalpageNums) %}
+                      {% if page-show_Page <= 1 %}
+                     <li> <a href="javascript:;" class="" cur_page="{{page}}">{{ page }}</a></li>
+                      {% else %}
+                      <li style="display:none;"> <a href="javascript:;" cur_page="{{page}}">{{ page }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+                  {% if cur_cate_totalpageNums-1 > show_Page %}
+                   <li><strong class="next">»</strong></li>
+                  {% endif %}
+              {% endif %}
+           </ul>
+          </div>
+<!--页码 end-->
         {% endfor %}
         <!-- </div> -->
       </div>
