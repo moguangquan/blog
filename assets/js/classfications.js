@@ -16,9 +16,9 @@ function categoryDisplay() {
         var cate = $(this).attr('cate'); //get category's name
         $('.post-list-body>div[post-cate!=' + cate + ']').hide(250);
         $('.post-list-body>div[post-cate=' + cate + ']').show(400);
-        generatePagi();
+       // generatePagi();
     });
-    generatePagi();
+    //generatePagi();
 }
 /**
 *生成分页
