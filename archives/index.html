@@ -43,24 +43,24 @@ comments: false
     </div>
       <div class="post-list-body">
 
-      <!-- {% assign names_archives ="" %}
+      {% assign names_archives ="" %}
       {% assign count_archives = 0 %}
       {% for post in site.posts %}
           {% capture this_date_str %}{{ post.date | date: "%Y-%m" }}{% endcapture %}
           {% capture next_date_str %}{{ post.previous.date | date: "%Y-%m" }}{% endcapture %}
           {% if this_date_str != next_date_str %}
                 {% assign count_archives =count_archives | plus:1 %}
-                {% assign names_archives | append: "," | append: this_date_str %}拼接字符串
+                {% assign names_archives | append: "," | append: this_date_str %}<!-- 拼接字符串 -->
           {% endif %}
       {% endfor %}
-      names_archives:{{names_archives}}
-      {% assign names_archives =names_archives | slice: 1,names_archives.size %} 去掉第一个字符
-      {% assign array_archi = names_archives | split: ',' %}转为数组
+      -------------------names_archives:{{names_archives}}
+      {% assign names_archives =names_archives | slice: 1,names_archives.size %} <!-- 去掉第一个字符 -->
+      {% assign array_archi = names_archives | split: ',' %}<!-- 转为数组 -->
           {% for arc_item in (0..count_archives) %}{% unless forloop.last %}
-                 <div post-cate="{{array_archi[item]}}">
+                 <div post-cate="{{array_archi[arc_item]}}">
 
                  </div>
-          {% endunless %}{% endfor %} -->
+          {% endunless %}{% endfor %}
 
         {% for post in site.posts %}
           {% assign item = post %}
