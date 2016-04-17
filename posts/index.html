@@ -1,8 +1,9 @@
 ---
 layout: classification
-title: All Posts
+title: categories
 description: "An archive of posts."
 comments: false
+paginate_path: "posts/page:num"
 ---
 
 <!--排序，字母在前-->
@@ -31,7 +32,7 @@ comments: false
     </div>
       <div class="post-list-body">
 
-<!--第一个目录 start-->
+<!--第一个目录 start
 {% capture this_word %}{{ cates_list[0] | strip_newlines }}{% endcapture %}
           <div post-cate="first-cate">
               {% for post in site.categories[this_word] %}
@@ -46,7 +47,7 @@ comments: false
                 {% endif %}
               {% endfor %}
           </div>
-<!--第一个目录 end-->
+第一个目录 end-->
         <!-- <div class="posts-in-categories"> -->
         {% for category in site.categories %}
           <div post-cate="{{category | first}}">
