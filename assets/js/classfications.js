@@ -7,7 +7,7 @@
  */
 function categoryDisplay() {
     /*only show All*/
-    $('.post-list-body>div[post-cate!=first-cate]').hide();
+    $('.post-list-body').find('div:first').nextAll().hide();
     /*show category when click categories list*/
     $('.categories-list-item').click(function() {
         var cate = $(this).attr('cate'); //get category's name
