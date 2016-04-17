@@ -57,7 +57,7 @@ paginate_path: "tags/page:num"
   <div class="row" id="paginator">
       {% if paginator.total_pages > 1 %}
           {% if paginator.previous_page %}
-              <a href="javascript:;">«</a>
+              <a href="{{ paginator.previous_page_path | prepend: site.url }}">«</a>
           {% endif %}
 
           {% for page in (1..paginator.total_pages) %}
