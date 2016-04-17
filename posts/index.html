@@ -1,7 +1,7 @@
 ---
 layout: classification
 title: categories
-description: "An archive of posts."
+description: "An archive of posts sorted by categoties."
 comments: false
 paginate_path: "posts/page:num"
 ---
@@ -31,23 +31,6 @@ paginate_path: "posts/page:num"
     Posts
     </div>
       <div class="post-list-body">
-
-<!--第一个目录 start
-{% capture this_word %}{{ cates_list[0] | strip_newlines }}{% endcapture %}
-          <div post-cate="first-cate">
-              {% for post in site.categories[this_word] %}
-                {% if post.url %}
-                  <a href="{{ post.url | prepend: site.url }}" class="post-list-item">
-                    <h2>
-                    {{ post.title }}
-                    </h2>
-                    <span class="">{{ post.description }}</span>
-                    <br><span class="post-list-item-date">{{ post.date|date: "%Y 年 %m 月 %d日" }}</span>
-                  </a>
-                {% endif %}
-              {% endfor %}
-          </div>
-第一个目录 end-->
         <!-- <div class="posts-in-categories"> -->
         {% for category in site.categories %}
           <div post-cate="{{category | first}}">

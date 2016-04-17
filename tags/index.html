@@ -1,6 +1,6 @@
 ---
 layout: tags
-title: Tag
+title: Tag Archive
 description: "An archive of posts sorted by tag."
 comments: false
 paginate_path: "tags/page:num"
@@ -32,26 +32,6 @@ paginate_path: "tags/page:num"
     Posts
     </div>
       <div class="post-list-body">
-        <!-- <div class="all-posts" post-cate="first-tag" name="first-tag">
-          {% capture this_word %}{{ tags_list[0] | strip_newlines }}{% endcapture %}
-          {% assign curTag_index = 1 %}
-          {% assign count = 0 %}
-          curTag_total:{{curTag_total}}
-          {% for post in site.tags[this_word] %}{% if post.title != null %}
-            {% if count == site.tag_paginat %}
-                 {% curTag_index=curTag_index | plus:1 %}
-                 {% count=0 %}
-            {% endif %}
-            {% count=count | plus:1 %}
-
-            <a class="post-list-item cur_tag{{curTag_index}}" href="{{post.url | prepend: site.url }}" title="{{ post.title }}">
-              <h2>{{ post.title }}</h2>
-              <span class="">{{ post.description}}</span>
-              <br><span class="post-list-item-date">{{ post.date|date:"%Y 年 %m 月 %d日" }}</span>
-            </a>
-
-          {% endif %}{% endfor %}
-        </div> -->
 
         <!-- <div class="posts-in-tags"> -->
         {% for item in (0..site.tags.size) %}{% unless forloop.last %}
