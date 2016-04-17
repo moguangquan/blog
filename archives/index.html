@@ -48,6 +48,11 @@ comments: false
       {% for post in site.posts %}
           {% capture this_date_str %}{{ post.date | date: "%Y-%m" }}{% endcapture %}
           {% capture next_date_str %}{{ post.previous.date | date: "%Y-%m" }}{% endcapture %}
+          {% if this_date_str != next_date_str %}
+                {% assign count_archives =count_archives | plus:1 %}
+                <!-- 拼接字符串 -->
+                {% assign names_archives =names_archives | append: "," | append: this_date_str %}
+          {% endif %}
       {% endfor %}
 
 
