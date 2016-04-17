@@ -59,7 +59,7 @@ comments: false
                   {% else %}
                   {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum %}
                   {% endif %}
-
+++++++++++++++cur_cate_totalpageNums：{{cur_cate_totalpageNums}}
                   {% if cur_cate_totalpageNums-1 > show_Page %}
                    <li><strong class="prev">«</strong></li>
                    {% endif %}
