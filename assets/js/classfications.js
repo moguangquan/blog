@@ -20,7 +20,7 @@ function categoryDisplay() {
 /**
 *生成分页
 */
-function generatePagi() {
+/*function generatePagi() {
         var dataSource = $.makeArray($('.post-list-body').children(":visible"));
         if(!dataSource.length) {
             return false;
@@ -35,7 +35,7 @@ function generatePagi() {
             }
         });
 
-}
+}*/
 // FitVids options
 $(function() {
   categoryDisplay();
