@@ -7,8 +7,7 @@
  */
 function tagDisplay() {
     /*only show first tag*/
-    //$('.post-list-body>div[post-cate!=first-tag]').hide();
-    $('.post-list-body').find('div:first').nextAll().hide();
+    $('.post-list-body>div[post-cate!=first-tag]').hide();
     /*show tag when click tag list*/
     $('.tag').click(function() {
         var cate = $(this).attr('cate'); //get tag's name
