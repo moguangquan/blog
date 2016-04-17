@@ -64,10 +64,10 @@ comments: false
                    <li><strong class="prev">«</strong></li>
                    {% endif %}
                   {% for page in (1..cur_cate_totalpageNums) %}
-                      {% if page-show_Page <= 1 %}
-                     <li> <a href="javascript:;" class="" cur_page="{{page}}">{{ page }}</a></li>
-                      {% else %}
+                      {% if page-show_Page > 1 %}
                       <li style="display:none;"> <a href="javascript:;" cur_page="{{page}}">{{ page }}</a></li>
+                      {% else %}
+                      <li><a href="javascript:;" class="" cur_page="{{page}}">{{ page }}</a></li>
                       {% endif %}
                   {% endfor %}
                   {% if cur_cate_totalpageNums-1 > show_Page %}
