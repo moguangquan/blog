@@ -48,21 +48,20 @@ comments: false
                 {% endif %}
               {% endfor %}
             {% endfor %}
-        }
 <!--页码 start-->
-          {% assign cate_pageNum=2 %}
-          {% if site.categories[cate_name].size | modulo:cate_pageNum ==0 %}
-            {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum %}
-          {% else %}
-            {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum | plus:1 %}
-          {% endif %}
+          {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
+          {% assign cate_pageNum=2 %}<!--每页显示的数量-->
+          {% if site.categories[cate_name].size > cate_pageNum %}
+          <div class="pagination">
+            <ul class="inline-list">
+              {% if site.categories[cate_name].size | modulo:cate_pageNum ==1 %}
+        { % assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum | plus:1 %}
+              {% else %}
+              {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum %}
+              {% endif %}
           ----------cate_name:{{cate_name}}
           +++++++++category.size:{{site.categories[cate_name].size}}
           --------cur_cate_totalpageNums:{{cur_cate_totalpageNums}}
-          {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
-          <div class="pagination">
-           <ul class="inline-list">
-              {% if cur_cate_totalpageNums > 1 %}
                   {% if cur_cate_totalpageNums-1 > show_Page %}
                    <li><strong class="prev">«</strong></li>
                    {% endif %}
@@ -76,9 +75,9 @@ comments: false
                   {% if cur_cate_totalpageNums-1 > show_Page %}
                    <li><strong class="next">»</strong></li>
                   {% endif %}
-              {% endif %}
-           </ul>
+            </ul>
           </div>
+          {% endif %}
 <!--页码 end-->
           </div>
         {% endfor %}
