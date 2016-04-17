@@ -39,8 +39,8 @@ timezone:    Asia/Shanghai
 future:      true
 highlighter: pygments
 markdown:    kramdown
-gems: [jekyll-sitemap,jekyll-paginate]
-
+gems:
+  - jekyll-sitemap
 sass:
   sass_dir: _sass
   style: compressed
@@ -50,9 +50,6 @@ permalink:   /:categories/:title/
 
 # Amount of post to show on home page
 paginate: 3
-paginate_files:
-- posts/index.html
-- tags/index.html
 cate_paginate: 3
 tag_paginate: 3
 
