@@ -50,6 +50,9 @@ permalink:   /:categories/:title/
 
 # Amount of post to show on home page
 paginate: 3
+paginate_files:
+- posts/index.html
+- tags/index.html
 cate_paginate: 3
 tag_paginate: 3
 
