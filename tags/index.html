@@ -34,6 +34,7 @@ comments: false
 
         <!-- <div class="posts-in-tags"> -->
         {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+        {% assign tag_name=tags_list[item] %}
          {% capture this_word %}{{ tags_list[item] | strip_newlines }}{% endcapture %}
           <div post-cate="{{this_word}}" name="{{this_word}}">
             {% for post in site.tags[this_word] %}
