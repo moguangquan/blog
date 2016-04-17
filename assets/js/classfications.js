@@ -13,30 +13,64 @@ function categoryDisplay() {
         var cate = $(this).attr('cate'); //get category's name
         $('.post-list-body>div[post-cate!=' + cate + ']').hide(250);
         $('.post-list-body>div[post-cate=' + cate + ']').show(400);
-       // generatePagi();
     });
-    //generatePagi();
 }
 /**
 *生成分页
 */
-/*function generatePagi() {
-        var dataSource = $.makeArray($('.post-list-body').children(":visible"));
-        if(!dataSource.length) {
-            return false;
+function generatePagi() {
+    $("div.pagination .inline-list li a").on("click",function(){
+        //清除所有的class为cur_page的a标签
+        $("div.pagination a").removeClass("current-page");
+        //给当前a标签添加class为cur_page
+        $(this).addClass("current-page");
+        var cur_page=$(this).attr("cur_page");//得到点击的页码
+        //判断页码-1<=(可选的页数/2)
+        if(cur_page-1>2){
+            $("a.post-list-item").hide();//隐藏文章
+            $("a.post-list-item").slice((cur_page-1)*2,cur_page*2);//显示文章
+            $("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().hide();//隐藏页码
+            $("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().show();//显示页码
         }
-
-        $('.main_content #paginator').pagination({
-            dataSource: dataSource,
-            pageSize: 2,
-            callback: function(data, pagination) {
-                $(dataSource).hide();
-                $(data).show();
-            }
-        });
-
-}*/
+        //判断页码-总页数>=(可选的页数/2)
+        if(cur_page-1<2){
+            $("a.post-list-item").hide();//隐藏文章
+            $("a.post-list-item").slice((cur_page-1)*2,cur_page*2);//显示文章
+            $("a[cur_page='"+(cur_page+2)+"']").closest("li").prevAll().hide();//隐藏页码
+            $("a[cur_page='"+(cur_page-2)+"']").closest("li").nextAll().show();//显示页码
+        }
+    });
+    //前一页
+    $("div.pagination .prev").on("click",function(){
+    //获取当前的页码
+        var cur_page=$(a.current-page).attr("cur_page");
+        if(cur_page){
+            var prev_page=cur_page-1;
+            //清除所有的class为current-page的a标签
+            $("div.pagination a").removeClass("current-page");
+            //给前一个页码添加current-page样式
+            $("a[cur_page='"+(prev_page)+"']").attrClass("current-page");
+            $("a.post-list-item").hide();//隐藏文章
+            $("a.post-list-item").slice((prev_page-1)*2,prev_page*2);//显示文章
+        }
+    });
+    //后一页
+    $("div.pagination .next").on("click",function(){
+        //获取当前的页码
+        var cur_page=$(a.current-page).attr("cur_page");
+        if(cur_page){
+            var next_page=cur_page+1;
+            //清除所有的class为current-page的a标签
+            $("div.pagination a").removeClass("current-page");
+            //给前一个页码添加current-page样式
+            $("a[cur_page='"+(next_page)+"']").attrClass("current-page");
+            $("a.post-list-item").hide();//隐藏文章
+            $("a.post-list-item").slice((next_page+1)*2,next_page*2);//显示文章
+        }
+    });
+}
 // FitVids options
 $(function() {
   categoryDisplay();
+  generatePagi();
 });

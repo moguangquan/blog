@@ -52,14 +52,13 @@ comments: false
           {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
           {% assign cate_pageNum=2 %}<!--每页显示的数量-->
           {% if site.categories[cate_name].size > cate_pageNum %}
-          <div class="pagination">
+          <div class="pagination" style="border-top:1px solid #ddd">
             <ul class="inline-list">
                   {% if site.categories[cate_name].size | modulo:cate_pageNum ==1 %}
             {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum | plus:1 %}
                   {% else %}
                   {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum %}
                   {% endif %}
-++++++++++++++cur_cate_totalpageNums：{{cur_cate_totalpageNums}}
                   {% if cur_cate_totalpageNums-1 > show_Page %}
                    <li><strong class="prev">«</strong></li>
                    {% endif %}

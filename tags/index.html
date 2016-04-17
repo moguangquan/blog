@@ -45,34 +45,40 @@ comments: false
                 </a>
               {% endif %}
             {% endfor %}
+
+<!--页码 start-->
+          {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
+          {% assign cate_pageNum=2 %}<!--每页显示的数量-->
+          {% if site.tags[tag_name].size > cate_pageNum %}
+          <div class="pagination" style="border-top:1px solid #ddd">
+            <ul class="inline-list">
+                  {% if site.tags[tag_name].size | modulo:cate_pageNum ==1 %}
+            {% assign cur_cate_totalpageNums=site.tags[tag_name].size | divided_by:cate_pageNum | plus:1 %}
+                  {% else %}
+                  {% assign cur_cate_totalpageNums=site.tags[tag_name].size | divided_by:cate_pageNum %}
+                  {% endif %}
+                  {% if cur_cate_totalpageNums-1 > show_Page %}
+                   <li><strong class="prev">«</strong></li>
+                   {% endif %}
+                  {% for page in (1..cur_cate_totalpageNums) %}
+                      {% if page-show_Page > 1 %}
+                      <li style="display:none;"> <a href="javascript:;" cur_page="{{page}}">{{ page }}</a></li>
+                      {% else %}
+                      <li><a href="javascript:;" class="" cur_page="{{page}}">{{ page }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+                  {% if cur_cate_totalpageNums-1 > show_Page %}
+                   <li><strong class="next">»</strong></li>
+                  {% endif %}
+            </ul>
+          </div>
+          {% endif %}
+<!--页码 end-->
+
           </div>
         {% endunless %}{% endfor %}
         <!-- </div> -->
       </div>
     </div>
   </div>
-
-  <!-- 目录分页
-  <div class="row" id="paginator">
-      {% if paginator.total_pages > 1 %}
-          {% if paginator.previous_page %}
-              <a href="{{ paginator.previous_page_path | prepend: site.url }}">«</a>
-          {% endif %}
-
-          {% for page in (1..paginator.total_pages) %}
-              {% if page == paginator.page %}
-                  <span class="active">{{ page }}</span>
-              {% elsif page == 1 %}
-                  <a href="{{ site.url }}">{{ page }}</a>
-              {% else %}
-                  <a href="{{ site.paginate_path | prepend: site.url | replace: ':num', page }}">{{ page }}</a>
-              {% endif %}
-          {% endfor %}
-
-          {% if paginator.next_page %}
-              <a href="{{ paginator.next_page_path | prepend: site.url }}">»</a>
-          {% endif %}
-      {% endif %}
-  </div>
-  目录分页 end -->
 </div>
