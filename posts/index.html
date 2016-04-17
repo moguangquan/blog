@@ -55,7 +55,7 @@ comments: false
           <div class="pagination">
             <ul class="inline-list">
                   {% if site.categories[cate_name].size | modulo:cate_pageNum ==1 %}
-            { % assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum | plus:1 %}
+            {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum | plus:1 %}
                   {% else %}
                   {% assign cur_cate_totalpageNums=site.categories[cate_name].size | divided_by:cate_pageNum %}
                   {% endif %}
