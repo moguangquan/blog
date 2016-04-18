@@ -28,14 +28,14 @@ function generatePagi() {
         //判断页码-1<=(可选的页数/2)
         if(cur_page-1>2){
             $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((cur_page-1)*2,cur_page*2);//显示文章
+            $("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
             $("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().hide();//隐藏页码
             $("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().show();//显示页码
         }
         //判断页码-总页数>=(可选的页数/2)
         if(cur_page-1<2){
             $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((cur_page-1)*2,cur_page*2);//显示文章
+            $("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
             $("a[cur_page='"+(cur_page+2)+"']").closest("li").prevAll().hide();//隐藏页码
             $("a[cur_page='"+(cur_page-2)+"']").closest("li").nextAll().show();//显示页码
         }
@@ -51,7 +51,7 @@ function generatePagi() {
             //给前一个页码添加current-page样式
             $("a[cur_page='"+(prev_page)+"']").attrClass("current-page");
             $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((prev_page-1)*2,prev_page*2);//显示文章
+            $("a.post-list-item").slice((prev_page-1)*2,prev_page*2).show();//显示文章
         }
     });
     //后一页
@@ -65,7 +65,7 @@ function generatePagi() {
             //给前一个页码添加current-page样式
             $("a[cur_page='"+(next_page)+"']").attrClass("current-page");
             $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((next_page+1)*2,next_page*2);//显示文章
+            $("a.post-list-item").slice((next_page+1)*2,next_page*2).show();//显示文章
         }
     });
 }
