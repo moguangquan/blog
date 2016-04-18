@@ -37,6 +37,7 @@ function generatePagi() {
         //判断页码-1<=(可选的页数/2)
         if(cur_page-1>2){
             $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
+            alert(cur_page);
             $cur_tag_posts.find("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
             //隐藏所有页码
             $cur_tag_posts.find("div.pagination").find("li").hide();
@@ -60,8 +61,8 @@ function generatePagi() {
         var $cur_tag_posts=$(this).closest("div.pagination");//得到当前的tag
         var cur_page=$cur_tag_posts.find("a.current-page").attr("cur_page");//获取当前的页码
         tag_reset();//复原操作
-        if(cur_page){
-            var prev_page=cur_page-1;
+        var prev_page=cur_page-1;//获取前一页的页码
+        if(prev_page>0){
             //给前一个页码添加current-page样式
             $cur_tag_posts.find("a[cur_page='"+(prev_page)+"']").attrClass("current-page");
             $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
@@ -73,8 +74,9 @@ function generatePagi() {
         var $cur_tag_posts=$(this).closest("div.pagination");//得到当前的tag
         var cur_page=$cur_tag_posts.find("a.current-page").attr("cur_page");//获取当前的页码
         tag_reset();//复原操作
-        if(cur_page){
-            var next_page=cur_page+1;
+        var next_page=cur_page+1;//获取下一页
+        var total_page=$cur_tag_posts.find("a:last").attr("cur_page");//总的页数
+        if(next_page<=total_page){
             $cur_tag_posts.find("a[cur_page='"+(next_page)+"']").attrClass("current-page");//给前一个页码添加current-page样式
             $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
             $cur_tag_posts.find("a.post-list-item").slice((next_page+1)*2,next_page*2).show();//显示文章
