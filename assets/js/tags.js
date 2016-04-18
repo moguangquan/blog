@@ -19,6 +19,10 @@ function tagDisplay() {
 *生成分页
 */
 function generatePagi() {
+    //初始化
+    $("a.post-list-item").hide();//隐藏文章
+    $("a.post-list-item").slice(0,2).show();//显示文章
+
     $("div.pagination .inline-list li a").on("click",function(){
         //清除所有的class为cur_page的a标签
         $("div.pagination a").removeClass("current-page");
@@ -36,8 +40,8 @@ function generatePagi() {
         if(cur_page-1<2){
             $("a.post-list-item").hide();//隐藏文章
             $("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
-            $("a[cur_page='"+(cur_page+2)+"']").closest("li").prevAll().hide();//隐藏页码
-            $("a[cur_page='"+(cur_page-2)+"']").closest("li").nextAll().show();//显示页码
+            $("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().hide();//隐藏页码
+            $("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().show();//显示页码
         }
     });
     //前一页
