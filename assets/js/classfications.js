@@ -19,9 +19,6 @@ function categoryDisplay() {
 *生成分页
 */
 function generatePagi() {
-    //初始化
-    $("a.post-list-item").hide();//隐藏文章
-    $("a.post-list-item").slice(0,2).show();//显示文章
 
     $("div.pagination .inline-list li a").on("click",function(){
         //清除所有的class为cur_page的a标签

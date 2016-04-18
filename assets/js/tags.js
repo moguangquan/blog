@@ -7,21 +7,26 @@
  */
 function tagDisplay() {
     /*only show first tag*/
-    $('.post-list-body').find('div:first').nextAll().hide();
+    var $first_tag_posts=$('.post-list-body').find('div:first');
+    $first_tag_posts.nextAll().hide();
+    //初始化第一个标签的隐藏文章
+    $first_tag_posts.find("a.post-list-item").hide();//隐藏文章
+    $first_tag_posts.find("a.post-list-item").slice(0,2).show();//显示文章
     /*show tag when click tag list*/
     $('.tag').click(function() {
         var cate = $(this).attr('cate'); //get tag's name
+        var $cur_tag_posts=$(document.getElementsByName(cate)[0]);
         $('.post-list-body>div').hide(250);
-        $(document.getElementsByName(cate)[0]).show(400);
+        $cur_tag_posts.show(400);
+        //隐藏该标签下的部分文章
+        $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
+        $cur_tag_posts.find("a.post-list-item").slice(0,2).show();//显示文章
     });
 }
 /**
 *生成分页
 */
 function generatePagi() {
-    //初始化
-    $("a.post-list-item").hide();//隐藏文章
-    $("a.post-list-item").slice(0,2).show();//显示文章
 
     $("div.pagination .inline-list li a").on("click",function(){
         //清除所有的class为cur_page的a标签
@@ -45,7 +50,7 @@ function generatePagi() {
         }
     });
     //前一页
-    $("div.pagination .prev").on("click",function(){
+    $("div.pagination strong.prev").on("click",function(){
     //获取当前的页码
         var cur_page=$(a.current-page).attr("cur_page");
         if(cur_page){
@@ -59,7 +64,7 @@ function generatePagi() {
         }
     });
     //后一页
-    $("div.pagination .next").on("click",function(){
+    $("div.pagination strong.next").on("click",function(){
         //获取当前的页码
         var cur_page=$(a.current-page).attr("cur_page");
         if(cur_page){
