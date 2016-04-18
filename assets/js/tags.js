@@ -29,54 +29,60 @@ function tagDisplay() {
 function generatePagi() {
 
     $("div.pagination .inline-list li a").on("click",function(){
-        //清除所有的class为cur_page的a标签
-        $("div.pagination a").removeClass("current-page");
+        tag_reset();//复原操作
         //给当前a标签添加class为cur_page
         $(this).addClass("current-page");
         var cur_page=$(this).attr("cur_page");//得到点击的页码
+        var $cur_tag_posts=$(this).closest("div.pagination");//得到当前的tag
         //判断页码-1<=(可选的页数/2)
         if(cur_page-1>2){
-            $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
-            $("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().hide();//隐藏页码
-            $("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().show();//显示页码
+            $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
+            $cur_tag_posts.find("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
+            $cur_tag_posts.find("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().hide();//隐藏页码
+            $cur_tag_posts.find("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().show();//显示页码
         }
         //判断页码-总页数>=(可选的页数/2)
         if(cur_page-1<2){
-            $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
-            $("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().hide();//隐藏页码
-            $("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().show();//显示页码
+            $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
+            $cur_tag_posts.find("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
+            $cur_tag_posts.find("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().hide();//隐藏页码
+            $cur_tag_posts.find("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().show();//显示页码
         }
     });
     //前一页
     $("div.pagination strong.prev").on("click",function(){
-    //获取当前的页码
-        var cur_page=$(a.current-page).attr("cur_page");
+        var cur_page=$cur_tag_posts.find("a.current-page").attr("cur_page");//获取当前的页码
+        tag_reset();//复原操作
+        var $cur_tag_posts=$(this).closest("div.pagination");//得到当前的tag
         if(cur_page){
             var prev_page=cur_page-1;
-            //清除所有的class为current-page的a标签
-            $("div.pagination a").removeClass("current-page");
             //给前一个页码添加current-page样式
-            $("a[cur_page='"+(prev_page)+"']").attrClass("current-page");
-            $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((prev_page-1)*2,prev_page*2).show();//显示文章
+            $cur_tag_posts.find("a[cur_page='"+(prev_page)+"']").attrClass("current-page");
+            $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
+            $cur_tag_posts.find("a.post-list-item").slice((prev_page-1)*2,prev_page*2).show();//显示文章
         }
     });
     //后一页
     $("div.pagination strong.next").on("click",function(){
-        //获取当前的页码
-        var cur_page=$(a.current-page).attr("cur_page");
+        var cur_page=$cur_tag_posts.find("a.current-page").attr("cur_page");//获取当前的页码
+        tag_reset();//复原操作
+        var $cur_tag_posts=$(this).closest("div.pagination");//得到当前的tag
         if(cur_page){
             var next_page=cur_page+1;
-            //清除所有的class为current-page的a标签
-            $("div.pagination a").removeClass("current-page");
-            //给前一个页码添加current-page样式
-            $("a[cur_page='"+(next_page)+"']").attrClass("current-page");
-            $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((next_page+1)*2,next_page*2).show();//显示文章
+            $cur_tag_posts.find("a[cur_page='"+(next_page)+"']").attrClass("current-page");//给前一个页码添加current-page样式
+            $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
+            $cur_tag_posts.find("a.post-list-item").slice((next_page+1)*2,next_page*2).show();//显示文章
         }
     });
+}
+/**
+复原操作，在所有点击操作之前发生一次
+*/
+function tag_reset(){
+//1.清除所有的class为cur_page的a标签
+    $("div.pagination a").removeClass("current-page");
+//2.隐藏所有文章
+    $("a.post-list-item").hide();
 }
 // FitVids options
 $(function() {

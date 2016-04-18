@@ -59,7 +59,7 @@ comments: false
                   {% assign cur_cate_totalpageNums=site.tags[tag_name].size | divided_by:cate_pageNum %}
                   {% endif %}
                   {% if cur_cate_totalpageNums | minus:1  > show_Page %}
-                   <li><strong class="prev">«</strong></li>
+                   <strong class="prev" style="cursor: pointer;">«</strong>
                    {% endif %}
                   {% for page in (1..cur_cate_totalpageNums) %}
                       {% if page-show_Page > 1 %}
@@ -69,7 +69,7 @@ comments: false
                       {% endif %}
                   {% endfor %}
                   {% if cur_cate_totalpageNums | minus:1 > show_Page %}
-                   <li><strong class="next">»</strong></li>
+                   <strong class="next" style="cursor: pointer;">»</strong>
                   {% endif %}
             </ul>
           </div>

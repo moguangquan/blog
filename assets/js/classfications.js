@@ -44,7 +44,7 @@ function generatePagi() {
     //前一页
     $("div.pagination .prev").on("click",function(){
     //获取当前的页码
-        var cur_page=$(a.current-page).attr("cur_page");
+        var cur_page=$("a.current-page").attr("cur_page");
         if(cur_page){
             var prev_page=cur_page-1;
             //清除所有的class为current-page的a标签
@@ -58,7 +58,7 @@ function generatePagi() {
     //后一页
     $("div.pagination .next").on("click",function(){
         //获取当前的页码
-        var cur_page=$(a.current-page).attr("cur_page");
+        var cur_page=$("a.current-page").attr("cur_page");
         if(cur_page){
             var next_page=cur_page+1;
             //清除所有的class为current-page的a标签
