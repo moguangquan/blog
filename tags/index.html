@@ -53,7 +53,9 @@ comments: false
           {% if site.tags[tag_name].size > cate_pageNum %}
           <div class="pagination" style="border-top:1px solid #ddd">
             <ul class="inline-list">
-                  {% if site.tags[tag_name].size | modulo:cate_pageNum == 1 %}
+                  {% assign result=site.tags[tag_name].size | modulo:cate_pageNum %}
+                  result====:{{result}}
+                  {% if result== 1 %}
                   ************1
             {% assign cur_cate_totalpageNums=site.tags[tag_name].size | divided_by:cate_pageNum | plus:1 %}
                   {% else %}
