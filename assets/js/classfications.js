@@ -19,6 +19,7 @@ function categoryDisplay() {
     }
     /*show category when click categories list*/
     $('.categories-list-item').click(function() {
+        cate_reset();
         var cate = $(this).attr('cate'); //get category's name
 
         var $cur_cate_posts=$(document.getElementsByName(cate)[0]);

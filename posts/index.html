@@ -34,7 +34,7 @@ comments: false
         <!-- <div class="posts-in-categories"> -->
         {% for category in site.categories %}
         {% assign cate_name=category | first %}
-          <div post-cate="{{cate_name}}" name="{{cate_name}}" class="tag-posts">
+          <div post-cate="{{cate_name}}" name="{{cate_name}}" class="cate-posts">
             {% for posts in category %}
               {% for post in posts %}
                 {% if post.url %}

@@ -19,6 +19,7 @@ function tagDisplay() {
     }
     /*show tag when click tag list*/
     $('.tag').click(function() {
+        tag_reset();
         var cate = $(this).attr('cate'); //get tag's name
         var $cur_tag_posts=$(document.getElementsByName(cate)[0]);
         $('.post-list-body>div').hide(250);
