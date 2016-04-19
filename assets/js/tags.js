@@ -10,10 +10,13 @@ function tagDisplay() {
     var $first_tag_posts=$('.post-list-body').find('div:first');
     $first_tag_posts.nextAll().hide();//隐藏除第一个文章块下的文章
     //初始化第一个标签的隐藏文章
-    $first_tag_posts.find("a.post-list-item").hide(250);//隐藏文章
-    $first_tag_posts.find("a.post-list-item").slice(0,2).show(400);//显示文章
-    $first_tag_posts.find("div.pagination").find("li:first").attrClass("current-page");//给页码一添加current-page样式
-
+    $first_tag_posts.find("a.post-list-item").hide();//隐藏文章
+    $first_tag_posts.find("a.post-list-item").slice(0,2).show();//显示文章
+    //第一个标签下的页码
+    var $first_tag_paginator=$first_tag_posts.find("div.pagination");
+    if($first_tag_paginator){
+        $first_tag_paginator.find("li:first").attrClass("current-page");//给页码一添加current-page样式
+    }
     /*show tag when click tag list*/
     $('.tag').click(function() {
         var cate = $(this).attr('cate'); //get tag's name
