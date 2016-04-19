@@ -52,8 +52,6 @@ function generatePagi() {
             $cur_tag_posts.find("div.pagination").find("li").hide();
             //显示五个页码slice(cur_page-2-1,cur_page+2+1)
             $cur_tag_posts.find("div.pagination").find("li").slice(cur_page-2-1,cur_page+2).show();
-            //$cur_tag_posts.find("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().hide();//隐藏页码
-            //$cur_tag_posts.find("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().show();//显示页码
         }else{//判断页码-总页数>=(可选的页数/2)
             $cur_tag_posts.find("a.post-list-item").hide(250);//隐藏文章
             $cur_tag_posts.find("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show(400);//显示文章
@@ -61,8 +59,6 @@ function generatePagi() {
             $cur_tag_posts.find("div.pagination").find("li").hide();
            //显示五个页码slice(cur_page-2-1,cur_page+2+1)
             $cur_tag_posts.find("div.pagination").find("li").slice(0,cur_page+2).show();
-           // $cur_tag_posts.find("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().hide();//隐藏页码
-           // $cur_tag_posts.find("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().show();//显示页码
         }
     });
     //前一页
@@ -87,8 +83,6 @@ function generatePagi() {
         var next_page=parseInt(cur_page)+1;//获取下一页
         var total_page=parseInt($cur_tag_posts.find("a:last").attr("cur_page"));//总的页数
         if(next_page<=total_page){
-            alert("next_page:"+next_page);
-            alert("total_page:"+total_page);
             tag_reset();//复原操作
             $cur_tag_posts.find("a[cur_page='"+(next_page)+"']").addClass("current-page");//给前一个页码添加current-page样式
             $cur_tag_posts.find("a.post-list-item").hide(250);//隐藏文章

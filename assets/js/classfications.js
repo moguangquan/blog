@@ -6,13 +6,32 @@
  * @return {[type]} [description]
  */
 function categoryDisplay() {
-    /*only show All*/
-    $('.post-list-body').find('div:first').nextAll().hide();
+   /*only show first cate*/
+    var $first_cate_posts=$('.post-list-body').find('div:first');
+    $first_cate_posts.nextAll().hide();//隐藏除第一个文章块下的文章
+    //初始化第一个标签的隐藏文章
+    $first_cate_posts.find("a.post-list-item").hide();//隐藏文章
+    $first_cate_posts.find("a.post-list-item").slice(0,2).show();//显示文章
+    //第一个标签下的页码
+    var $first_cate_paginator=$first_cate_posts.find("div.pagination");
+    if($first_cate_paginator){
+        $first_cate_paginator.find("li:first").addClass("current-page");//给页码一添加current-page样式
+    }
     /*show category when click categories list*/
     $('.categories-list-item').click(function() {
         var cate = $(this).attr('cate'); //get category's name
-        $('.post-list-body>div[post-cate!=' + cate + ']').hide(250);
-        $('.post-list-body>div[post-cate=' + cate + ']').show(400);
+
+        var $cur_cate_posts=$(document.getElementsByName(cate)[0]);
+        $('.post-list-body>div').hide(250);
+        $cur_cate_posts.show(400);
+        //隐藏该标签下的部分文章
+        $cur_cate_posts.find("a.post-list-item").hide();//隐藏文章
+        $cur_cate_posts.find("a.post-list-item").slice(0,2).show();//显示文章
+         //第一个标签下的页码
+        var $cur_cate_paginator=$cur_cate_posts.find("div.pagination");
+        if($cur_cate_paginator){
+         $cur_cate_paginator.find("a:first").addClass("current-page");//给页码一添加current-page样式
+        }
     });
 }
 /**
@@ -21,54 +40,69 @@ function categoryDisplay() {
 function generatePagi() {
 
     $("div.pagination .inline-list li a").on("click",function(){
-        //清除所有的class为cur_page的a标签
-        $("div.pagination a").removeClass("current-page");
+        cate_reset();//复原操作
         //给当前a标签添加class为cur_page
         $(this).addClass("current-page");
-        var cur_page=$(this).attr("cur_page");//得到点击的页码
+        var cur_page=parseInt($(this).attr("cur_page"));//得到点击的页码
+        var $cur_cate_posts=$(this).closest("div.cate-posts");//得到当前的cate
         //判断页码-1<=(可选的页数/2)
         if(cur_page-1>2){
-            $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
-            $("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().hide();//隐藏页码
-            $("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().show();//显示页码
-        }
-        //判断页码-总页数>=(可选的页数/2)
-        if(cur_page-1<2){
-            $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
-            $("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().hide();//隐藏页码
-            $("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().show();//显示页码
+            $cur_cate_posts.find("a.post-list-item").hide(250);//隐藏文章
+            $cur_cate_posts.find("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show(400);//显示文章
+            //隐藏所有页码
+            $cur_cate_posts.find("div.pagination").find("li").hide();
+            //显示五个页码slice(cur_page-2-1,cur_page+2+1)
+            $cur_cate_posts.find("div.pagination").find("li").slice(cur_page-2-1,cur_page+2).show();
+        }else{//判断页码-总页数>=(可选的页数/2)
+            $cur_cate_posts.find("a.post-list-item").hide(250);//隐藏文章
+            $cur_cate_posts.find("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show(400);//显示文章
+           //隐藏所有页码
+            $cur_cate_posts.find("div.pagination").find("li").hide();
+           //显示五个页码slice(cur_page-2-1,cur_page+2+1)
+            $cur_cate_posts.find("div.pagination").find("li").slice(0,cur_page+2).show();
         }
     });
     //前一页
     $("div.pagination .prev").on("click",function(){
-    //获取当前的页码
-        var cur_page=$("a.current-page").attr("cur_page");
-        if(cur_page){
-            var prev_page=cur_page-1;
-            //清除所有的class为current-page的a标签
-            $("div.pagination a").removeClass("current-page");
+        var $cur_cate_posts=$(this).closest("div.cate-posts");//得到当前的cate
+        var cur_page=$cur_cate_posts.find("a.current-page").attr("cur_page");//获取当前的页码
+        var prev_page=parseInt(cur_page)-1;//获取前一页的页码
+        if(prev_page>0){
+            cate_reset();//复原操作
             //给前一个页码添加current-page样式
-            $("a[cur_page='"+(prev_page)+"']").attrClass("current-page");
-            $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((prev_page-1)*2,prev_page*2).show();//显示文章
+            $cur_cate_posts.find("a[cur_page='"+(prev_page)+"']").addClass("current-page");
+            $cur_cate_posts.find("a.post-list-item").hide(250);//隐藏文章
+            $cur_cate_posts.find("a.post-list-item").slice((prev_page-1)*2,prev_page*2).show(400);//显示文章
+        }else{
+           alert("第一页是最小的页码哦!");
         }
     });
     //后一页
     $("div.pagination .next").on("click",function(){
-        //获取当前的页码
-        var cur_page=$("a.current-page").attr("cur_page");
-        if(cur_page){
-            var next_page=cur_page+1;
-            //清除所有的class为current-page的a标签
-            $("div.pagination a").removeClass("current-page");
-            //给前一个页码添加current-page样式
-            $("a[cur_page='"+(next_page)+"']").attrClass("current-page");
-            $("a.post-list-item").hide();//隐藏文章
-            $("a.post-list-item").slice((next_page+1)*2,next_page*2).show();//显示文章
+        var $cur_cate_posts=$(this).closest("div.cate-posts");//得到当前的cate
+        var cur_page=$cur_cate_posts.find("a.current-page").attr("cur_page");//获取当前的页码
+        var next_page=parseInt(cur_page)+1;//获取下一页
+        var total_page=parseInt($cur_cate_posts.find("a:last").attr("cur_page"));//总的页数
+        if(next_page<=total_page){
+            cate_reset();//复原操作
+            $cur_cate_posts.find("a[cur_page='"+(next_page)+"']").addClass("current-page");//给前一个页码添加current-page样式
+            $cur_cate_posts.find("a.post-list-item").hide(250);//隐藏文章
+            $cur_cate_posts.find("a.post-list-item").slice((next_page-1)*2,next_page*2).show(400);//显示文章
+        }else{
+             alert("抱歉，目前达到最大页码，无法给你更多!");
         }
     });
+}
+/**
+复原操作，在所有点击操作之前发生一次
+*/
+function cate_reset(){
+//1.清除所有的class为cur_page的a标签
+    $("div.pagination a").removeClass("current-page");
+//2.隐藏所有文章
+    $("a.post-list-item").hide();
+//3.显示所有的页码
+    $("div.pagination li").show();
 }
 // FitVids options
 $(function() {

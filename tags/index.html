@@ -49,31 +49,30 @@ comments: false
 
 <!--页码 start-->
           {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
-          {% assign cate_pageNum=2 %}<!--每页显示的数量-->
-          {% if site.tags[tag_name].size > cate_pageNum %}
-          <div class="pagination" style="border-top:1px solid #ddd">
+          {% assign tag_pageNum=2 %}<!--每页显示的数量-->
+          {% if site.tags[tag_name].size > tag_pageNum %}
+          <div class="pagination">
             <ul class="inline-list">
-              ---------{{site.tags[tag_name].size | modulo:cate_pageNum}}
-                  {% assign result=site.tags[tag_name].size | modulo:cate_pageNum %}
+                  {% assign result=site.tags[tag_name].size | modulo:tag_pageNum %}
                   {% if result > 0 %}
-                  ************1
-            {% assign cur_cate_totalpageNums=site.tags[tag_name].size | divided_by:cate_pageNum | plus:1 %}
+            {% assign cur_tag_totalpageNums=site.tags[tag_name].size | divided_by:tag_pageNum | plus:1 %}
                   {% else %}
-                  ************2
-                  {% assign cur_cate_totalpageNums=site.tags[tag_name].size | divided_by:cate_pageNum %}
+                  {% assign cur_tag_totalpageNums=site.tags[tag_name].size | divided_by:tag_pageNum %}
                   {% endif %}
-                 cur_cate_totalpageNums=========：{{cur_cate_totalpageNums}}
-                  {% if cur_cate_totalpageNums | minus:1  > show_Page %}
+                  {% assign result=cur_tag_totalpageNums | minus:1 %}
+                  {% if result > show_Page %}
                    <strong class="prev" style="cursor: pointer;">«</strong>
                    {% endif %}
-                  {% for page in (1..cur_cate_totalpageNums) %}
-                      {% if page-show_Page > 1 %}
+                  {% for page in (1..cur_tag_totalpageNums) %}
+                  {% assign result=page | minus:show_Page %}
+                      {% if > 1 %}
                       <li style="display:none;"> <a href="javascript:;" cur_page="{{page}}">{{ page }}</a></li>
                       {% else %}
                       <li><a href="javascript:;" class="" cur_page="{{page}}">{{ page }}</a></li>
                       {% endif %}
                   {% endfor %}
-                  {% if cur_cate_totalpageNums | minus:1 > show_Page %}
+                  {% assign result=cur_tag_totalpageNums | minus:1 %}
+                  {% if  result > show_Page %}
                    <strong class="next" style="cursor: pointer;">»</strong>
                   {% endif %}
             </ul>
