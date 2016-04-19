@@ -42,7 +42,7 @@ function generatePagi() {
         tag_reset();//复原操作
         //给当前a标签添加class为cur_page
         $(this).addClass("current-page");
-        var cur_page=$(this).attr("cur_page");//得到点击的页码
+        var cur_page=parseInt($(this).attr("cur_page"));//得到点击的页码
         var $cur_tag_posts=$(this).closest("div.tag-posts");//得到当前的tag
         //判断页码-1<=(可选的页数/2)
         if(cur_page-1>2){
@@ -69,7 +69,7 @@ function generatePagi() {
     $("div.pagination strong.prev").on("click",function(){
         var $cur_tag_posts=$(this).closest("div.tag-posts");//得到当前的tag
         var cur_page=$cur_tag_posts.find("a.current-page").attr("cur_page");//获取当前的页码
-        var prev_page=cur_page-1;//获取前一页的页码
+        var prev_page=parseInt(cur_page)-1;//获取前一页的页码
         if(prev_page>0){
             tag_reset();//复原操作
             //给前一个页码添加current-page样式
@@ -84,17 +84,14 @@ function generatePagi() {
     $("div.pagination strong.next").on("click",function(){
         var $cur_tag_posts=$(this).closest("div.tag-posts");//得到当前的tag
         var cur_page=$cur_tag_posts.find("a.current-page").attr("cur_page");//获取当前的页码
-        var next_page=cur_page+1;//获取下一页
-        var total_page=$cur_tag_posts.find("a:last").attr("cur_page");//总的页数
+        var next_page=parseInt(cur_page)+1;//获取下一页
+        var total_page=parseInt($cur_tag_posts.find("a:last").attr("cur_page"));//总的页数
         if(next_page<=total_page){
             alert("next_page:"+next_page);
             alert("total_page:"+total_page);
             tag_reset();//复原操作
-            alert(2);
             $cur_tag_posts.find("a[cur_page='"+(next_page)+"']").addClass("current-page");//给前一个页码添加current-page样式
-            alert(3);
             $cur_tag_posts.find("a.post-list-item").hide(250);//隐藏文章
-            alert(4);
             $cur_tag_posts.find("a.post-list-item").slice((next_page+1)*2,next_page*2).show(400);//显示文章
         }else{
              alert("抱歉，目前达到最大页码，无法给你更多!");
