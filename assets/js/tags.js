@@ -39,25 +39,19 @@ function generatePagi() {
         if(cur_page-1>2){
             $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
             $cur_tag_posts.find("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
-            alert(1);
             //隐藏所有页码
             $cur_tag_posts.find("div.pagination").find("li").hide();
-            alert(2);
             //显示五个页码slice(cur_page-2-1,cur_page+2+1)
             $cur_tag_posts.find("div.pagination").find("li").slice(cur_page-2-1,cur_page+2).show();
-            alert(3);
             //$cur_tag_posts.find("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().hide();//隐藏页码
             //$cur_tag_posts.find("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().show();//显示页码
         }else{//判断页码-总页数>=(可选的页数/2)
             $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
             $cur_tag_posts.find("a.post-list-item").slice((cur_page-1)*2,cur_page*2).show();//显示文章
-            alert(4);
            //隐藏所有页码
             $cur_tag_posts.find("div.pagination").find("li").hide();
-            alert(5);
            //显示五个页码slice(cur_page-2-1,cur_page+2+1)
             $cur_tag_posts.find("div.pagination").find("li").slice(0,cur_page+2).show();
-            alert(6);
            // $cur_tag_posts.find("a[cur_page='"+(cur_page+2)+"']").closest("li").nextAll().hide();//隐藏页码
            // $cur_tag_posts.find("a[cur_page='"+(cur_page-2)+"']").closest("li").prevAll().show();//显示页码
         }
