@@ -66,26 +66,30 @@ function generatePagi() {
     $("div.pagination strong.prev").on("click",function(){
         var $cur_tag_posts=$(this).closest("div.tag-posts");//得到当前的tag
         var cur_page=$cur_tag_posts.find("a.current-page").attr("cur_page");//获取当前的页码
-        tag_reset();//复原操作
         var prev_page=cur_page-1;//获取前一页的页码
         if(prev_page>0){
+            tag_reset();//复原操作
             //给前一个页码添加current-page样式
             $cur_tag_posts.find("a[cur_page='"+(prev_page)+"']").attrClass("current-page");
             $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
             $cur_tag_posts.find("a.post-list-item").slice((prev_page-1)*2,prev_page*2).show();//显示文章
+        }else{
+           alert("第一页是最小的页码哦!");
         }
     });
     //后一页
     $("div.pagination strong.next").on("click",function(){
         var $cur_tag_posts=$(this).closest("div.tag-posts");//得到当前的tag
         var cur_page=$cur_tag_posts.find("a.current-page").attr("cur_page");//获取当前的页码
-        tag_reset();//复原操作
         var next_page=cur_page+1;//获取下一页
         var total_page=$cur_tag_posts.find("a:last").attr("cur_page");//总的页数
         if(next_page<=total_page){
+            tag_reset();//复原操作
             $cur_tag_posts.find("a[cur_page='"+(next_page)+"']").attrClass("current-page");//给前一个页码添加current-page样式
             $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
             $cur_tag_posts.find("a.post-list-item").slice((next_page+1)*2,next_page*2).show();//显示文章
+        }else{
+             alert("抱歉，目前达到最大页码，无法给你更多!");
         }
     });
 }
