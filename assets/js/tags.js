@@ -87,9 +87,14 @@ function generatePagi() {
         var next_page=cur_page+1;//获取下一页
         var total_page=$cur_tag_posts.find("a:last").attr("cur_page");//总的页数
         if(next_page<=total_page){
+            alert("next_page:"+next_page);
+            alert("total_page:"+total_page);
             tag_reset();//复原操作
+            alert(2);
             $cur_tag_posts.find("a[cur_page='"+(next_page)+"']").addClass("current-page");//给前一个页码添加current-page样式
+            alert(3);
             $cur_tag_posts.find("a.post-list-item").hide(250);//隐藏文章
+            alert(4);
             $cur_tag_posts.find("a.post-list-item").slice((next_page+1)*2,next_page*2).show(400);//显示文章
         }else{
              alert("抱歉，目前达到最大页码，无法给你更多!");
