@@ -15,7 +15,7 @@ function tagDisplay() {
     //第一个标签下的页码
     var $first_tag_paginator=$first_tag_posts.find("div.pagination");
     if($first_tag_paginator){
-        $first_tag_paginator.find("li:first").attrClass("current-page");//给页码一添加current-page样式
+        $first_tag_paginator.find("li:first").addClass("current-page");//给页码一添加current-page样式
     }
     /*show tag when click tag list*/
     $('.tag').click(function() {
