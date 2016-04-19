@@ -29,7 +29,7 @@ function tagDisplay() {
          //第一个标签下的页码
         var $cur_tag_paginator=$cur_tag_posts.find("div.pagination");
         if($cur_tag_paginator){
-         $cur_tag_paginator.find("li:first").addClass("current-page");//给页码一添加current-page样式
+         $cur_tag_paginator.find("a:first").addClass("current-page");//给页码一添加current-page样式
         }
     });
 }
