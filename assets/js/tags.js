@@ -92,7 +92,7 @@ function generatePagi() {
             tag_reset();//复原操作
             $cur_tag_posts.find("a[cur_page='"+(next_page)+"']").addClass("current-page");//给前一个页码添加current-page样式
             $cur_tag_posts.find("a.post-list-item").hide(250);//隐藏文章
-            $cur_tag_posts.find("a.post-list-item").slice((next_page+1)*2,next_page*2).show(400);//显示文章
+            $cur_tag_posts.find("a.post-list-item").slice((next_page-1)*2,next_page*2).show(400);//显示文章
         }else{
              alert("抱歉，目前达到最大页码，无法给你更多!");
         }

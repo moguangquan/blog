@@ -54,7 +54,8 @@ comments: false
           <div class="pagination" style="border-top:1px solid #ddd">
             <ul class="inline-list">
               ---------{{site.tags[tag_name].size | modulo:cate_pageNum}}
-                  {% if site.tags[tag_name].size | modulo:cate_pageNum > 0 %}
+                  {% assign result=site.tags[tag_name].size | modulo:cate_pageNum %}
+                  {% if result > 0 %}
                   ************1
             {% assign cur_cate_totalpageNums=site.tags[tag_name].size | divided_by:cate_pageNum | plus:1 %}
                   {% else %}
