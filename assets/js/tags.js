@@ -33,7 +33,7 @@ function generatePagi() {
         //给当前a标签添加class为cur_page
         $(this).addClass("current-page");
         var cur_page=$(this).attr("cur_page");//得到点击的页码
-        var $cur_tag_posts=$(this).closest("div.post-list-body");//得到当前的tag
+        var $cur_tag_posts=$(this).closest("div.tag-posts");//得到当前的tag
         alert($cur_tag_posts.html());
         //判断页码-1<=(可选的页数/2)
         if(cur_page-1>2){
@@ -64,7 +64,7 @@ function generatePagi() {
     });
     //前一页
     $("div.pagination strong.prev").on("click",function(){
-        var $cur_tag_posts=$(this).closest("div.post-list-body");//得到当前的tag
+        var $cur_tag_posts=$(this).closest("div.tag-posts");//得到当前的tag
         var cur_page=$cur_tag_posts.find("a.current-page").attr("cur_page");//获取当前的页码
         tag_reset();//复原操作
         var prev_page=cur_page-1;//获取前一页的页码
@@ -77,7 +77,7 @@ function generatePagi() {
     });
     //后一页
     $("div.pagination strong.next").on("click",function(){
-        var $cur_tag_posts=$(this).closest("div.post-list-body");//得到当前的tag
+        var $cur_tag_posts=$(this).closest("div.tag-posts");//得到当前的tag
         var cur_page=$cur_tag_posts.find("a.current-page").attr("cur_page");//获取当前的页码
         tag_reset();//复原操作
         var next_page=cur_page+1;//获取下一页
