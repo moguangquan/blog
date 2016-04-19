@@ -24,8 +24,13 @@ function tagDisplay() {
         $('.post-list-body>div').hide(250);
         $cur_tag_posts.show(400);
         //隐藏该标签下的部分文章
-        $cur_tag_posts.find("a.post-list-item").hide(250);//隐藏文章
-        $cur_tag_posts.find("a.post-list-item").slice(0,2).show(400);//显示文章
+        $cur_tag_posts.find("a.post-list-item").hide();//隐藏文章
+        $cur_tag_posts.find("a.post-list-item").slice(0,2).show();//显示文章
+         //第一个标签下的页码
+        var $cur_tag_paginator=$cur_tag_posts.find("div.pagination");
+        if($cur_tag_paginator){
+         $cur_tag_paginator.find("li:first").addClass("current-page");//给页码一添加current-page样式
+        }
     });
 }
 /**
