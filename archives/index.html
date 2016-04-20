@@ -69,6 +69,38 @@ comments: false
                   </a>
                 {% endif %}
               {% endfor %}
+               <!--页码 start-->
+              {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
+              {% assign archive_pageNum=5 %}<!--每页显示的数量-->
+              {% if array_archi[arc_item].size > archive_pageNum %}
+              <div class="pagination">
+                <ul class="inline-list">
+                  {% assign result=array_archi[arc_item].size | modulo:archive_pageNum %}
+                  {% if result > 0 %}
+            {% assign cur_archive_totalpageNums=array_archi[arc_item].size | divided_by:archive_pageNum | plus:1 %}
+                  {% else %}
+                  {% assign cur_archive_totalpageNums=array_archi[arc_item].size | divided_by:archive_pageNum %}
+                  {% endif %}
+                  {% assign result=cur_archive_totalpageNums | minus:1 %}
+                  {% if result > show_Page %}
+                   <strong class="prev" style="cursor: pointer;">«</strong>
+                   {% endif %}
+                  {% for page in (1..cur_archive_totalpageNums) %}
+                  {% assign result=page | minus:show_Page %}
+                      {% if > 1 %}
+                      <li style="display:none;"> <a href="javascript:;" cur_page="{{page}}">{{ page }}</a></li>
+                      {% else %}
+                      <li><a href="javascript:;" class="" cur_page="{{page}}">{{ page }}</a></li>
+                      {% endif %}
+                  {% endfor %}
+                  {% assign result=cur_archive_totalpageNums | minus:1 %}
+                  {% if  result > show_Page %}
+                   <strong class="next" style="cursor: pointer;">»</strong>
+                  {% endif %}
+                </ul>
+              </div>
+              {% endif %}
+            <!--页码 end-->
               </div>
           {% endunless %}{% endfor %}
 
