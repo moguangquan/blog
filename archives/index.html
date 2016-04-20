@@ -35,11 +35,7 @@ comments: false
       {% endif %}
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
-    ------------archi_counts:{{ archi_counts }}
-    {% assign arr_archi = archi_counts | split: ',' %}<!-- 转为数组 -->
-    {% for word in arr_archi %}
-		{{ word }} --------
-	{% endfor %}
+    {% assign arr_archi_count = archi_counts | split: ',' %}<!-- 转为数组 -->
 
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
@@ -81,15 +77,14 @@ comments: false
                <!--页码 start-->
               {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
               {% assign archive_pageNum=5 %}<!--每页显示的数量-->
-              -----array_archi_counts[arc_item]:{{ array_archi_counts[arc_item] }}
-              {% if array_archi_counts[arc_item] > archive_pageNum %}
+              {% if arr_archi_count[arc_item] > archive_pageNum %}
               <div class="pagination">
                 <ul class="inline-list">
-                  {% assign result=array_archi_counts[arc_item] | modulo:archive_pageNum %}
+                  {% assign result=arr_archi_count[arc_item] | modulo:archive_pageNum %}
                   {% if result > 0 %}
-            {% assign cur_archive_totalpageNums=array_archi_counts[arc_item].size | divided_by:archive_pageNum | plus:1 %}
+            {% assign cur_archive_totalpageNums=arr_archi_count[arc_item].size | divided_by:archive_pageNum | plus:1 %}
                   {% else %}
-                  {% assign cur_archive_totalpageNums=array_archi_counts[arc_item].size | divided_by:archive_pageNum %}
+                  {% assign cur_archive_totalpageNums=arr_archi_count[arc_item].size | divided_by:archive_pageNum %}
                   {% endif %}
                   {% assign result=cur_archive_totalpageNums | minus:1 %}
                   {% if result > show_Page %}
