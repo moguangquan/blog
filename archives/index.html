@@ -36,8 +36,8 @@ comments: false
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
     ------------archi_counts:{{ archi_counts }}
-    {% capture array_archi_counts %}{{ archi_counts | split: ',' }}{% endcapture %}
-    {% for word in array_archi_counts %}
+    {% capture arr_archi %}{{ archi_counts | split: ',' }}{% endcapture %}
+    {% for word in arr_archi %}
 		{{ word }} --------
 	{% endfor %}
 
@@ -64,6 +64,9 @@ comments: false
       {% endfor %}
       {% assign names_archives =names_archives | slice: 1,names_archives.size %} <!-- 去掉第一个字符 -->
       {% assign array_archi = names_archives | split: ',' %}<!-- 转为数组 -->
+          {% for word in array_archi %}
+			{{ word }} --------
+			{% endfor %}
           {% for arc_item in (0..count_archives) %}{% unless forloop.last %}
               {% capture this_word %}{{ array_archi[arc_item] | strip_newlines }}{% endcapture %}
               <div post-cate="{{this_word}}" name="{{this_word}}" class="archive-posts">
