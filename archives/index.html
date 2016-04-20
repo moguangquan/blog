@@ -33,7 +33,9 @@ comments: false
       {% assign count = count | plus: 1 %}
       {% endif %}
     {% endfor %}
-    {% assign array_archi_counts = [1,2] %}<!-- 转为数组 -->
+    {% assign archi_counts=",1,2,3" %}
+    {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
+    {% assign array_archi_counts = archi_counts | split: ',' %}<!-- 转为数组 -->
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
