@@ -28,14 +28,14 @@ comments: false
           <a href="javascript:;" class="categories-list-item" cate="post-{{ this_date| date: "%Y-%m" }}">
           {{ this_date | date: "%Y 年 %m 月" }} <span class="my-badge">{{ count }}</span>
           </a>
+          {% assign archi_counts=archi_counts | append: "," | append: count %}
       {% assign count = 1 %}
       {% else %}
       {% assign count = count | plus: 1 %}
       {% endif %}
     {% endfor %}
-    {% assign archi_counts=",1,2,3" %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
-    --------archi_counts:{{archi_counts}}
+    ------------archi_counts:{{archi_counts}}
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
