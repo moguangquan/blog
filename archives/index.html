@@ -75,6 +75,8 @@ comments: false
               {% if array_archi[arc_item].size > archive_pageNum %}
               <div class="pagination">
                 <ul class="inline-list">
+                     -----array_archi[arc_item].size:{{array_archi[arc_item].size}} 
+ -----  array_archi[arc_item]:{{array_archi[arc_item]}}
                   {% assign result=array_archi[arc_item].size | modulo:archive_pageNum %}
                   {% if result > 0 %}
             {% assign cur_archive_totalpageNums=array_archi[arc_item].size | divided_by:archive_pageNum | plus:1 %}
