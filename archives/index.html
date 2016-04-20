@@ -36,9 +36,8 @@ comments: false
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
     {% capture array_archi_counts %}{{ archi_counts | split: "," }}{% endcapture %}
-    ------------array_archi_counts:{{array_archi_counts}}
-    {% assign array_archi_counts =[1,2,3] %}
-    ++++++++++比较:{{{array_archi_counts}}
+    ------------array_archi_counts:{{ array_archi_counts[0] }}
+    ------------array_archi_counts:{{ array_archi_counts[1] }}
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
@@ -78,7 +77,7 @@ comments: false
                <!--页码 start-->
               {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
               {% assign archive_pageNum=5 %}<!--每页显示的数量-->
-              -----array_archi_counts[arc_item]:{{array_archi_counts[arc_item]}} 
+              -----array_archi_counts[arc_item]:{{ array_archi_counts[arc_item] }} 
               {% if array_archi_counts[arc_item] > archive_pageNum %}
               <div class="pagination">
                 <ul class="inline-list">
