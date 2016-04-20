@@ -84,7 +84,7 @@ function generatePagi() {
         var next_page=parseInt(cur_page)+1;//获取下一页
         var total_page=parseInt($cur_tag_posts.find("a:last").attr("cur_page"));//总的页数
         if(next_page<=total_page){
-            tag_reset();//复原操作
+        tag_reset();//复原操作
             $cur_tag_posts.find("a[cur_page='"+(next_page)+"']").addClass("current-page");//给前一个页码添加current-page样式
             $cur_tag_posts.find("a.post-list-item").hide(250);//隐藏文章
             $cur_tag_posts.find("a.post-list-item").slice((next_page-1)*5,next_page*5).show(400);//显示文章
