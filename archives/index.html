@@ -5,7 +5,7 @@ description: "An archive of posts sorted by archives."
 comments: false
 ---
 
-<div class="col-sm-3" role="categories">
+<div class="col-sm-3" role="archives">
     <div class="shadow-corner-curl hidden-xs">
       <div class="categories-list-header iconfont archive-icon">
         Archives
@@ -25,7 +25,7 @@ comments: false
       {% capture this_date_str %}{{ this_date | date: "%Y-%m" }}{% endcapture %}
       {% capture next_date_str %}{{ next_date | date: "%Y-%m" }}{% endcapture %}
       {% if this_date_str != next_date_str %}
-          <a href="javascript:;" class="categories-list-item" cate="post-{{ this_date| date: "%Y-%m" }}">
+          <a href="javascript:;" class="archives" cate="{{ this_date| date: "%Y-%m" }}">
           {{ this_date | date: "%Y 年 %m 月" }} <span class="my-badge">{{ count }}</span>
           </a>
           {% assign archi_counts=archi_counts | append: "," | append: count %}
@@ -36,7 +36,7 @@ comments: false
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
     ------------archi_counts:{{ archi_counts }}
-    {% capture array_archi_counts %}{{ archi_counts | split: "," }}{% endcapture %}
+    {% capture array_archi_counts %}{{ archi_counts | split: ',' }}{% endcapture %}
     {% for word in array_archi_counts %}
 		{{ word }} --------
 	{% endfor %}
