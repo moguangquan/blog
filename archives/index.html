@@ -35,9 +35,12 @@ comments: false
       {% endif %}
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
+    ------------archi_counts:{{ archi_counts }}
     {% capture array_archi_counts %}{{ archi_counts | split: "," }}{% endcapture %}
-    ------------array_archi_counts:{{ array_archi_counts[0] }}
-    ------------array_archi_counts:{{ array_archi_counts[1] }}
+    {% for word in array_archi_counts %}
+		{{ word }} --------
+	{% endfor %}
+
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
@@ -62,7 +65,8 @@ comments: false
       {% assign names_archives =names_archives | slice: 1,names_archives.size %} <!-- 去掉第一个字符 -->
       {% assign array_archi = names_archives | split: ',' %}<!-- 转为数组 -->
           {% for arc_item in (0..count_archives) %}{% unless forloop.last %}
-              <div post-cate="post-{{array_archi[arc_item]}}">
+              {% capture this_word %}{{ array_archi[arc_item] | strip_newlines }}{% endcapture %}
+              <div post-cate="{{this_word}}" name="{{this_word}}" class="archive-posts">
               {% for post in site.posts %}
                 {% capture cur_post_date %}{{ post.date | date: "%Y-%m" }}{% endcapture %}
                 {% if array_archi[arc_item] == cur_post_date %}
@@ -77,7 +81,7 @@ comments: false
                <!--页码 start-->
               {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
               {% assign archive_pageNum=5 %}<!--每页显示的数量-->
-              -----array_archi_counts[arc_item]:{{ array_archi_counts[arc_item] }} 
+              -----array_archi_counts[arc_item]:{{ array_archi_counts[arc_item] }}
               {% if array_archi_counts[arc_item] > archive_pageNum %}
               <div class="pagination">
                 <ul class="inline-list">
