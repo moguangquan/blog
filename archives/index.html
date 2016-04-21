@@ -37,7 +37,7 @@ comments: false
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
    ========== archi_counts:{{archi_counts}}
     {% for i in (0..5)%}
-        {% assign arr_archi_count[i] =[i] %}
+        {% assign arr_archi_count[i] =i %}
     {% endfor %}
    --------
     {% for item in arr_archi_count %}
