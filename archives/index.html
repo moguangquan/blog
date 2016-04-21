@@ -36,7 +36,7 @@ comments: false
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
      <!-- 转为数组 -->
-    {% assign arr_archi_count = archi_counts | split: ',' %}
+   {% capture %}{{archi_counts | split: ',' }}{% endcapture %}
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
