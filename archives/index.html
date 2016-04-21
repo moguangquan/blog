@@ -35,9 +35,10 @@ comments: false
       {% endif %}
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
+   ========== archi_counts:{{archi_counts}}
     {% for item in arr_archi_count %}
     {{ item }}-------
-  {% endfor %}
+    {% endfor %}
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
