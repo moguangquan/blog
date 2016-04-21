@@ -35,7 +35,6 @@ comments: false
       {% endif %}
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
-   ========== archi_counts:{{archi_counts}}
    {% assign archi_counts="1,2,3,4,5,6" %}
    {% assign arr_archi_count = archi_counts | split: ',' %}<!-- 转为数组 -->
     {% for i in (0..5)%}
@@ -45,7 +44,6 @@ comments: false
     {% for item in arr_archi_count %}
     {{ item }}
     {% endfor %}
-    ------------
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
@@ -55,7 +53,6 @@ comments: false
     Posts
     </div>
       <div class="post-list-body">
-
       {% assign names_archives ="" %}
       {% assign count_archives = 0 %}
       {% for post in site.posts %}
@@ -86,6 +83,7 @@ comments: false
                <!--页码 start-->
               {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
               {% assign archive_pageNum=5 %}<!--每页显示的数量-->
+              ++{{arr_archi_count[arc_item]}}
               {% if arr_archi_count[arc_item] > archive_pageNum %}
               <div class="pagination">
                 <ul class="inline-list">
