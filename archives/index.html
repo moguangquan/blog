@@ -82,9 +82,9 @@ comments: false
                 <ul class="inline-list">
                   {% assign result=arr_archi_count[arc_item] | modulo:archive_pageNum %}
                   {% if result > 0 %}
-            {% assign cur_archive_totalpageNums=arr_archi_count[arc_item].size | divided_by:archive_pageNum | plus:1 %}
+            {% assign cur_archive_totalpageNums=arr_archi_count[arc_item] | divided_by:archive_pageNum | plus:1 %}
                   {% else %}
-                  {% assign cur_archive_totalpageNums=arr_archi_count[arc_item].size | divided_by:archive_pageNum %}
+                  {% assign cur_archive_totalpageNums=arr_archi_count[arc_item] | divided_by:archive_pageNum %}
                   {% endif %}
                   {% assign result=cur_archive_totalpageNums | minus:1 %}
                   {% if result > show_Page %}
