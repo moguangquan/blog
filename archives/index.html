@@ -4,7 +4,7 @@ title: archives
 description: "An archive of posts sorted by archives."
 comments: false
 ---
-{% assign arr_archi_count =[1,2,3,4,5,6] %}
+
 <div class="col-sm-3" role="archives">
     <div class="shadow-corner-curl hidden-xs">
       <div class="categories-list-header iconfont archive-icon">
@@ -36,9 +36,12 @@ comments: false
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
    ========== archi_counts:{{archi_counts}}
+   --------
+   {% assign arr_archi_count =[1,2,3,4,5,6] %}
     {% for item in arr_archi_count %}
-    {{ item }}-------
+    {{ item }}
     {% endfor %}
+    ------------
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
