@@ -36,9 +36,10 @@ comments: false
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
      <!-- 转为数组 -->
-     -----------archi_counts:{{archi_counts}}
-     --------------split:{{ archi_counts | split: ',' }}
     {% capture arr_archi_count %}{{ archi_counts | split: ',' }}{% endcapture %}
+     {% for word in arr_archi_count  %}
+    	-----{{word}}--------
+    {% endfor %}
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
