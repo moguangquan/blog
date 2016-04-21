@@ -35,8 +35,7 @@ comments: false
       {% endif %}
     {% endfor %}
     {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
-    {% assign archi_counts="1,2,3" %}
-    {% capture arr_archi_count %}{{archi_counts | split: ','}}{% endcapture %}
+    {% assign arr_archi_count ="1","2","3" %}
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
