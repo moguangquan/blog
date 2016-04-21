@@ -38,6 +38,7 @@ comments: false
    ========== archi_counts:{{archi_counts}}
     {% for i in (0..5)%}
         {% assign arr_archi_count[i] =i %}
+       ********** {{arr_archi_count[i]}}
     {% endfor %}
    --------
     {% for item in arr_archi_count %}
