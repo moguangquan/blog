@@ -92,7 +92,14 @@ comments: false
                         {% else %}
                           {% assign cur_archive_totalpageNums=arrArchiCount[arc_item] | divided_by:archive_pageNum %}
                         {% endif %}
-                        cur_archive_totalpageNums:{{cur_archive_totalpageNums}}
+                        {% assign result=cur_archive_totalpageNums | minus:1 %}
+                        {% if result > show_Page %}
+                          <strong class="prev" style="cursor: pointer;">«</strong>
+                        {% endif %}
+                        {% assign result=cur_archive_totalpageNums | minus:1 %}
+                        {% if  result > show_Page %}
+                           <strong class="next" style="cursor: pointer;">»</strong>
+                        {% endif %}
                     </ul>
                  </div>
                 {% endif %}
