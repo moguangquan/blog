@@ -34,7 +34,7 @@ comments: false
       {% endif %}
     {% endfor %}
    {% assign archi_counts="1,2,3,4,5,6" %}
-   
+   {% assign arrArchiCount = archi_counts | split: ',' %}
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
