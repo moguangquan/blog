@@ -34,6 +34,7 @@ comments: false
       {% assign count = count | plus: 1 %}
       {% endif %}
     {% endfor %}
+    {% assign archi_counts =archi_counts | slice: 1,archi_counts.size %} <!-- 去掉第一个字符 -->
    {% assign arrArchiCount = archi_counts | split: ',' %}
      +++++++{{arrArchiCount[0]}}+++++
      +++++++{{arrArchiCount[1]}}+++++
