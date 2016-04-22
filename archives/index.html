@@ -34,7 +34,9 @@ comments: false
       {% endif %}
     {% endfor %}
    {% assign archi_counts="1,2,3,4,5,6" %}
-
+   {% assign arrArchiCount = archi_counts | split: ',' %}
+    +++++++{{arrArchiCount[0]}}+++++
+     +++++++{{arrArchiCount[1]}}+++++
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
@@ -74,7 +76,6 @@ comments: false
                <!--页码 start-->
               {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
               {% assign archive_pageNum=5 %}<!--每页显示的数量-->
-              +++++++{{arrArchiCount[arc_item]}}+++++
               {% if arrArchiCount[arc_item] > archive_pageNum %}
               <div class="pagination">
                 <ul class="inline-list">
