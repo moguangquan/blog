@@ -28,12 +28,12 @@ comments: false
           <a href="javascript:;" class="categories-list-item archives" cate="{{ this_date| date: "%Y-%m" }}">
           {{ this_date | date: "%Y 年 %m 月" }} <span class="my-badge">{{ count }}</span>
           </a>
+          {% assign archi_counts =archi_counts | append "," | append:count%}
           {% assign count = 1 %}
       {% else %}
       {% assign count = count | plus: 1 %}
       {% endif %}
     {% endfor %}
-   {% assign archi_counts="1,2,3,4,5,6" %}
    {% assign arrArchiCount = archi_counts | split: ',' %}
     +++++++{{arrArchiCount[0]}}+++++
      +++++++{{arrArchiCount[1]}}+++++
