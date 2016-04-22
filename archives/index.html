@@ -76,12 +76,12 @@ comments: false
                <!--页码 start-->
                --{{arrArchiCount[arc_item] | times: 1 }}
                --{{arrArchiCount[arc_item] | times: 2 }}
-               --{{arrArchiCount[arc_item] | times: 1 | miuns:5 }}
-               --{{arrArchiCount[arc_item] | miuns: 5}}
+               --{{arrArchiCount[arc_item] | times: 1 | minus:5 }}
+               --{{arrArchiCount[arc_item] | minus: 5}}
                --{{arrArchiCount[arc_item] | divided_by: 1 }}
                --{{arrArchiCount[arc_item] | divided_by: 2 }}
-               --{{arrArchiCount[arc_item] | divided_by: 1 | miuns:5 }}
-               {% assign result=arrArchiCount[arc_item] | miuns: 5 %}
+               --{{arrArchiCount[arc_item] | divided_by: 1 | minus:5 }}
+               {% assign result=arrArchiCount[arc_item] | minus: 5 %}
                -----result:{{result}}
             <!--页码 end-->
               </div>
