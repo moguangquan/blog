@@ -76,10 +76,22 @@ comments: false
                <!--页码 start-->
                --{{arrArchiCount[arc_item] | times: 1 | minus:5 }}
                --{{arrArchiCount[arc_item] | divided_by: 1 | minus:5 }}
+               --{{arrArchiCount[arc_item] | modulo: 5 }}
                {% assign result=arrArchiCount[arc_item] | minus: 5 %}
                -----result:{{result}}
                 {% if result > 0 %}
                     -----result2:{{arrArchiCount[arc_item]}}
+                {% endif %}
+                
+                {% assign show_Page=2 %}<!--可选择的页码数，左边可选2，右边可选2-->
+                {% assign archive_pageNum=5 %}<!--每页显示的数量-->
+                {% if result > 0 %}
+                <div class="pagination">
+                    <ul class="inline-list">
+                        {% assign result=arrArchiCount[arc_item] | modulo:archive_pageNum %}
+                        module:{{result}}
+                    </ul>
+                 </div>
                 {% endif %}
             <!--页码 end-->
               </div>
