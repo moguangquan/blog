@@ -76,9 +76,6 @@ comments: false
                <!--页码 start-->
                {% assign result=arrArchiCount[arc_item] | miuns: 5 %}
                -----result:{{result}}
-               {% if result > 0 %}
-             +++++++arrArchiCount{{arrArchiCount[arc_item]}}+++++
-              {% endif %}
             <!--页码 end-->
               </div>
           {% endunless %}{% endfor %}
