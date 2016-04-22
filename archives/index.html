@@ -74,8 +74,6 @@ comments: false
                 {% endif %}
               {% endfor %}
                <!--页码 start-->
-               --{{arrArchiCount[arc_item] | times: 1 | minus:5 }}
-               --{{arrArchiCount[arc_item] | divided_by: 1 | minus:5 }}
                --{{arrArchiCount[arc_item] | modulo: 5 }}
                {% assign result=arrArchiCount[arc_item] | minus: 5 %}
                -----result:{{result}}
@@ -89,7 +87,12 @@ comments: false
                 <div class="pagination">
                     <ul class="inline-list">
                         {% assign result=arrArchiCount[arc_item] | modulo:archive_pageNum %}
-                        module:{{result}}
+                        {% if result > 0 %}
+                          {% assign cur_archive_totalpageNums=arrArchiCount[arc_item] | divided_by:archive_pageNum | plus:1 %}
+                        {% else %}
+                          {% assign cur_archive_totalpageNums=arrArchiCount[arc_item] | divided_by:archive_pageNum %}
+                        {% endif %}
+                        cur_archive_totalpageNums:{{cur_archive_totalpageNums}}
                     </ul>
                  </div>
                 {% endif %}
