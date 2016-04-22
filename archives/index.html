@@ -83,8 +83,8 @@ comments: false
                --{{arrArchiCount[arc_item] | divided_by: 1 | minus:5 }}
                {% assign result=arrArchiCount[arc_item] | minus: 5 %}
                -----result:{{result}}
-                {% if arrArchiCount[arc_item] > 5 %}
-                    -----result:{{arrArchiCount[arc_item]}}
+                {% if result > 0 %}
+                    -----result2:{{arrArchiCount[arc_item]}}
                 {% endif %}
             <!--页码 end-->
               </div>
