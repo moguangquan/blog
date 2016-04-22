@@ -74,7 +74,9 @@ comments: false
                 {% endif %}
               {% endfor %}
                <!--页码 start-->
+               {% if arrArchiCount[arc_item] > 5 %}
              +++++++arrArchiCount{{arrArchiCount[arc_item]}}+++++
+              {% endif %}
             <!--页码 end-->
               </div>
           {% endunless %}{% endfor %}
