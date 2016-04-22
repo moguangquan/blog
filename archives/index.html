@@ -34,10 +34,8 @@ comments: false
       {% endif %}
     {% endfor %}
    {% assign archi_counts="1,2,3,4,5,6" %}
-   {% assign arr_archi_count = archi_counts | split: ',' %}<!-- 转为数组 -->
-    {% for i in (0..5)%}
-      {{arr_archi_count[i]}}
-    {% endfor %}
+   {% assign arr_archi_count = archi_counts | split: "," %}<!-- 转为数组 -->
+
     </div><!-- /.shadow-corner-curl hidden-xs-->
 </div><!-- /.col-sm-3 -->
 <div class="main_content">
