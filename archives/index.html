@@ -74,9 +74,7 @@ comments: false
                 {% endif %}
               {% endfor %}
                <!--页码 start-->
-             +++++++arrArchiCount[0]{{arrArchiCount[0]}}+++++
-                 +++++++arrArchiCount[1]{{arrArchiCount[1]}}+++++
-              +++++++arrArchiCount[2]{{arrArchiCount[2]}}+++++
+             +++++++arrArchiCount{{arrArchiCount[count_archives]}}+++++
             <!--页码 end-->
               </div>
           {% endunless %}{% endfor %}
