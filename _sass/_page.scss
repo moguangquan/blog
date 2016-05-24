@@ -64,7 +64,7 @@ border: 1px solid #ddd;
 }
 .header-title {
 	text-align: center;
-	margin: 45px 0 0;
+	margin: 20px 0 0;
 	h1 {
 		margin: 10px 20px;
 		font-weight: 700;
@@ -624,9 +624,17 @@ header .entry-meta {
 	.classfication-entry-header{
 		width: 100%;
 		overflow: hidden;
-		position: fixed;
 		background-color: #37767F;
 		z-index: 2000;
+		margin-top: -8px;
+	}
+	.classfication-header-title-wrap{
+		float: right;
+		line-height:18px;
+		margin-right: 5%;
+	}
+	.classfication-header-title-wrap h3{
+			color:#fff;
 	}
 }
 //----------
