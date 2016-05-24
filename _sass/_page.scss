@@ -68,7 +68,7 @@ border: 1px solid #ddd;
 	h1 {
 		margin: 10px 20px;
 		font-weight: 700;
-		@include font-rem(32);
+		@include font-rem(25);
 		color: lighten($base-color,20);
 		@media #{$medium} {
 			@include font-rem(48);
@@ -241,7 +241,7 @@ header .entry-meta {
 #post,
 #page {
 	.entry-content {
-		margin: 40px 2px 20px 2px;
+		margin: 15px 2px 20px 2px;
 		padding: 10px 15px;
 		background-color: $white;
 		box-shadow: 0 0 0 0, 0 6px 12px rgba($black,0.1);

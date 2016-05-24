@@ -15,7 +15,7 @@ categories: java
 ### MAVEN依赖
 以下是依赖在maven中心仓库中可以找到
 
-```maven
+```markdown
 <groupId>com.sun.media</groupId>
     <artifactId>jai_codec</artifactId>
     <version>1.1-mr</version>
@@ -39,11 +39,11 @@ categories: java
 
 ### 实现
 
-**类图**
+#### 类图
 
 ![https和http](/blog/images/posts_imgs/201605210101.jpg)
 
-**类属性和方法简介**
+#### 类属性和方法简介
 
 - Pdf2TiffConstant
 
