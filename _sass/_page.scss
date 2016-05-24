@@ -64,11 +64,13 @@ border: 1px solid #ddd;
 }
 .header-title {
 	text-align: center;
-	margin: 30px 0 0;
+	margin: 45px 0 0;
 	h1 {
 		margin: 10px 20px;
 		font-weight: 700;
-		@include font-rem(25);
+		font-size: 40px;
+		/**
+		@include font-rem(32);
 		color: lighten($base-color,20);
 		@media #{$medium} {
 			@include font-rem(48);
@@ -76,6 +78,7 @@ border: 1px solid #ddd;
 		@media #{$large} {
 			@include font-rem(60);
 		}
+		**/
 	}
 	h2 {
 		margin: 0;
@@ -241,7 +244,7 @@ header .entry-meta {
 #post,
 #page {
 	.entry-content {
-		margin: 15px 2px 20px 2px;
+		margin: 40px 2px 20px 2px;
 		padding: 10px 15px;
 		background-color: $white;
 		box-shadow: 0 0 0 0, 0 6px 12px rgba($black,0.1);
@@ -253,7 +256,7 @@ header .entry-meta {
 		}
 		@media #{$large} {
 			max-width: 66%;
-			margin: 50px auto 30px auto;
+			margin: 15px auto 30px auto;
 			padding: 50px 80px;
 			> p:first-child {
 				@include font-size(20);
@@ -616,6 +619,17 @@ header .entry-meta {
 			color:#fff;
 	}
 }
+//----#post .classfication-entry-header----
+#post{
+	.classfication-entry-header{
+		width: 100%;
+		overflow: hidden;
+		position: fixed;
+		background-color: #37767F;
+		z-index: 2000;
+	}
+}
+//----------
 .entry-image-index {
 	margin-top: -25px;
 	margin-left: -15px;
