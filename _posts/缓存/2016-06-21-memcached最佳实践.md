@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "memcache最佳实践"
-description: "memcache是分布式缓存问题的处理方案之一，就本篇而言总结了memcache的实践和原理"
+title: "memcached最佳实践"
+description: "memcached是分布式缓存问题的处理方案之一，就本篇而言总结了memcached的实践和原理"
 tags: [分布式缓存]
 categories: 缓存
 isOriginal: false
