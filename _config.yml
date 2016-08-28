@@ -1,11 +1,14 @@
 title:            moguangquan-blog
 description:      welcome to my blog.The blog is still biulding
-disqus_shortname:      #disqus插件的简称
 reading_time:     true
 words_per_minute: 30
 # Your site's domain goes here (eg: //mmistakes.github.io, http://mademistakes.com, etc)
 # When testing locally leave blank or use http://localhost:4000
 url: http://moguangquan.github.io/blog
+
+disqus_shortname:  moguangquan    #disqus插件的简称
+uyan_shortname:        #uyan插件的简称
+duoshuo_shortname:     #duoshuo插件的简称
 
 # Owner/author information
 owner:
