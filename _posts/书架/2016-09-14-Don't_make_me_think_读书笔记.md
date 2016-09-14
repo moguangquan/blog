@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Don't make me think-读书笔记
-description: "关于阅读“Don't make me think”书籍的笔记"
+description: "关于阅读Don't make me think书籍的笔记"
 tags: [读书笔记]
 categories: 书架
 ---
