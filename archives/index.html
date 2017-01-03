@@ -10,10 +10,10 @@ comments: false
       <div class="categories-list-header iconfont archive-icon">
         Archives
         <sapn style="float: right;">
-          <a href="javascript:;" title="prev year" style="color:#337ab7;">
+          <a href="javascript:;" id="prevYear" title="prev year" style="color:#337ab7;">
           &lt;&lt;</a>
-          <b class="year-archive" onclick="javascript:;" title="待实现">2016年</b>
-          <a href="javascript:;" title="next year" style="color: #337ab7;">&gt;&gt;</a>
+          <b class="year-archive" onclick="javascript:;" id="currYear" title="{{ site.time| date: "%Y"}}">{{ site.time| date: "%Y 年"}}</b>
+          <a href="javascript:;" id="nextYear" title="next year" style="color: #337ab7;">&gt;&gt;</a>
         </sapn>
       </div><!-- /.categories-list-header -->
 
