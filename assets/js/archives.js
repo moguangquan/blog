@@ -55,12 +55,12 @@ function archiveDisplay() {
     $('#prevYear').click(function() {
         var prevYear=$('#currYear').attr("title")-1;//获取当页年份-1
         opPrevOrNextYear(prevYear);
-    }
+    });
     //点击下一年的链接跳转
     $('#nextYear').click(function() {
         var nextYear=$('#currYear').attr("title")+1;//获取当页年份+1
         opPrevOrNextYear(nextYear);
-    }
+    });
 }
 /**
 *点击前一年或后一年的链接跳转操作
