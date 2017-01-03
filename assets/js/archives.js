@@ -53,14 +53,14 @@ function archiveDisplay() {
     });
     //点击前一年的链接跳转
     $('#prevYear').click(function() {
-        var prevYear=$('#currYear').attr("title")-1;//获取当页年份-1
+        var prevYear=+$('#currYear').attr("title")-1;//获取当页年份-1
         if(prevYear>=2016){//2016是最早的写作年份
           opPrevOrNextYear(prevYear);
         }
     });
     //点击下一年的链接跳转
     $('#nextYear').click(function() {
-        var nextYear=$('#currYear').attr("title")+1;//获取当页年份+1
+        var nextYear=+$('#currYear').attr("title")+1;//获取当页年份+1
         var currDate=new Date();
         var currYear=currDate.getFullYear();
         if(nextYear<=currDate){
