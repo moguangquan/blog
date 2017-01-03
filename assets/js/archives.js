@@ -63,7 +63,7 @@ function archiveDisplay() {
         var nextYear=+$('#currYear').attr("title")+1;//获取当页年份+1
         var currDate=new Date();
         var currYear=currDate.getFullYear();
-        if(nextYear<=currDate){
+        if(nextYear<=currYear){
            opPrevOrNextYear(nextYear);
         }
     });
@@ -78,6 +78,7 @@ function opPrevOrNextYear(opYear){
     var cate=$cates.first().attr("cate");//获取第一条
     opArchives(cate);
     $('#currYear').attr("title",opYear);//设置当页年份
+    $('#currYear').html(opYear+" 年");//设置当页年份
 }
 /**
 *生成分页
