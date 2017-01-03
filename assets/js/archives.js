@@ -24,7 +24,7 @@ function initArchive(){
 /**
 *根据传入的cate找到需要隐藏和显示的文章列表
 */
-function opArchives(var cate){
+function opArchives(cate){
     archive_reset();
     var $cur_archive_posts=$(document.getElementsByName(cate)[0]);
     $('.post-list-body>div').hide(250);
@@ -65,7 +65,7 @@ function archiveDisplay() {
 /**
 *点击前一年或后一年的链接跳转操作
 */
-function opPrevOrNextYear(var opYear){
+function opPrevOrNextYear(opYear){
     $('a.categories-list-item').hide();//隐藏所有archives
     var $cates=$('a.categories-list-item').find("a[cate^="+opYear+"]");
     $cates.show();//获取导航栏目，显示当页年的archives
