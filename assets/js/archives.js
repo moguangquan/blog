@@ -7,7 +7,7 @@ function initArchive(){
     var currDate=new Date();
     var currYear=currDate.getFullYear();
     $('a.categories-list-item').hide();//隐藏所有archives
-    $('a.categories-list-item').find("a[cate^="+currYear+"]").show();//显示当年的archives
+    $("a[cate^="+currYear+"]").show();//显示当年的archives
    /*only show first cate*/
 
     var $first_archive_posts=$('.post-list-body').find('div:first');
@@ -54,12 +54,18 @@ function archiveDisplay() {
     //点击前一年的链接跳转
     $('#prevYear').click(function() {
         var prevYear=$('#currYear').attr("title")-1;//获取当页年份-1
-        opPrevOrNextYear(prevYear);
+        if(prevYear>=2016){//2016是最早的写作年份
+          opPrevOrNextYear(prevYear);
+        }
     });
     //点击下一年的链接跳转
     $('#nextYear').click(function() {
         var nextYear=$('#currYear').attr("title")+1;//获取当页年份+1
-        opPrevOrNextYear(nextYear);
+        var currDate=new Date();
+        var currYear=currDate.getFullYear();
+        if(nextYear<=currDate){
+           opPrevOrNextYear(nextYear);
+        }
     });
 }
 /**
@@ -67,7 +73,7 @@ function archiveDisplay() {
 */
 function opPrevOrNextYear(opYear){
     $('a.categories-list-item').hide();//隐藏所有archives
-    var $cates=$('a.categories-list-item').find("a[cate^="+opYear+"]");
+    var $cates=$("a[cate^="+opYear+"]");
     $cates.show();//获取导航栏目，显示当页年的archives
     var cate=$cates.first().attr("cate");//获取第一条
     opArchives(cate);
