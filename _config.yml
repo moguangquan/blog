@@ -62,7 +62,7 @@ kramdown:
   syntax_highlighter: rouge
   enable_coderay: true
 coderay:
-    coderay_line_numbers: inline
+    coderay_line_numbers: :table
 
 include: [".htaccess"]
 exclude: ["lib", "config.rb", "Capfile", "config", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules"]
