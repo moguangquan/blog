@@ -20,7 +20,7 @@ IE浏览器会在“C:\Documents and Settings\你的用户名\Cookies”文件�
 
 ### Cookie的工作原理
 
-户端请求服务器，如果服务器需要记录该用户状态，就使用response向客户端浏览器颁发一个Cookie。客户端浏览器会把Cookie保存起来。当浏览器再请求该网站时，浏览器把请求的网址连同该Cookie一同提交给服务器。服务器检查该Cookie，以此来辨认用户状态。服务器还可以根据需要修改Cookie的内容。
+客户端请求服务器，如果服务器需要记录该用户状态，就使用response向客户端浏览器颁发一个Cookie。客户端浏览器会把Cookie保存起来。当浏览器再请求该网站时，浏览器把请求的网址连同该Cookie一同提交给服务器。服务器检查该Cookie，以此来辨认用户状态。服务器还可以根据需要修改Cookie的内容。
 
 ### Session的工作原理
 
@@ -57,7 +57,7 @@ Java中把Cookie封装成了javax.servlet.http.Cookie类。通过request.getCook
 
 ### Session的api 简述
 
-Session对应的类为javax.servlet.http.HttpSession类。Session也是一种key-value的属性对，通过getAttribute(Stringkey)和setAttribute(String key，Objectvalue)方法读写客户状态信息。Servlet里通过request.getSession()方法获取该客户的Session。
+Session对应的类为javax.servlet.http.HttpSession类。Session也是一种key-value的属性对，通过getAttribute(String key)和setAttribute(String key，Object value)方法读写客户状态信息。Servlet里通过request.getSession()方法获取该客户的Session。
 
 ### 额外
 
