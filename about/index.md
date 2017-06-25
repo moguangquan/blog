@@ -19,6 +19,8 @@ modified: 2016-01-14
 * 家   乡：	广东	罗定
 * 兴   趣： 开发、网球、看书
 * 曾就职公司： `广州华资软件技术有限公司` 、 `广东电信亿讯科技有限公司`
+* 工作 QQ：2759188793
+* 邮   箱：MO_GUANG_QUAN@126.COM
 
 <div markdown="0"><a href="{{ site.url }}" class="btn btn-info">返回主页</a></div>
 
