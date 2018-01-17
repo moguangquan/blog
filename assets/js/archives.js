@@ -4,8 +4,9 @@
 */
 function initArchive(){
   //导航栏中只显示今年的archives,并把非今年的archive隐藏
-    var currDate=new Date();
-    var currYear=currDate.getFullYear();
+    //var currDate=new Date();
+    //var currYear=currDate.getFullYear();
+    var currYear=$('#currYear').attr('title');
     $('a.categories-list-item').hide();//隐藏所有archives
     $("a[cate^="+currYear+"]").show();//显示当年的archives
    /*only show first cate*/
